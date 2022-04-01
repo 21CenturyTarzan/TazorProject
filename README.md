@@ -1,7 +1,7 @@
-# [Ω Olympus Frontend](https://app.olympusdao.finance/)
-This is the front-end repo for Olympus that allows users be part of the future of Greece. 
+# [Ω Tazor Frontend](https://app.Tazordao.finance/)
+This is the front-end repo for Tazor that allows users be part of the future of Greece. 
 
-**_ Note We're currently in the process of switching to TypeScript. Please read  this  guide on how to use TypeScript for this repository. https://github.com/OlympusDAO/olympus-frontend/wiki/TypeScript-Refactor-General-Guidelines _**
+**_ Note We're currently in the process of switching to TypeScript. Please read  this  guide on how to use TypeScript for this repository. https://github.com/TazorDAO/Tazor-frontend/wiki/TypeScript-Refactor-General-Guidelines _**
 
 ##  🔧 Setting up Local Development
 
@@ -12,8 +12,8 @@ Required:
 
 
 ```bash
-$ git clone https://github.com/OlympusDAO/olympusdao.git
-$ cd olympusdao
+$ git clone https://github.com/TazorDAO/Tazordao.git
+$ cd Tazordao
 
 # set up your environment variables
 # read the comments in the .env files for what is required/optional
@@ -69,9 +69,9 @@ The files/folder structure are a  **WIP** and may contain some unused files. The
 
 ## Application translation
 
-Olympus uses [linguijs](https://github.com/lingui/js-lingui) to manage translation.
+Tazor uses [linguijs](https://github.com/lingui/js-lingui) to manage translation.
 
-The language files are located in a submodule deployed in `src/locales/translations`. This submodule points to the [olympus translation repository](https://github.com/OlympusDAO/olympus-translations)
+The language files are located in a submodule deployed in `src/locales/translations`. This submodule points to the [Tazor translation repository](https://github.com/TazorDAO/Tazor-translations)
 
 In order to mark text for translation you can use:
 - The <Trans> component in jsx templates eg. `<Trans>Translate me!</Trans>`
@@ -84,7 +84,7 @@ t({
 })
 ```
 
-When new texts are created or existing texts are modified in the application please leave a message in the OlympusDao app-translation channel for the translators to translate them.
+When new texts are created or existing texts are modified in the application please leave a message in the TazorDao app-translation channel for the translators to translate them.
 
 ### Resolving merge conflicts with translations
 
@@ -118,8 +118,8 @@ _**TODO**: TheGraph implementation/how/why we use it._
 Commits to the follow branches are automatically deployed to their respective URLs.
 | Branch | URL |
 | --- | --- |
-| master | https://app.olympusdao.finance |
-| deploy | https://staging.olympusdao.finance |
+| master | https://app.Tazordao.finance |
+| deploy | https://staging.Tazordao.finance |
 
 **Pull Requests**:
 Each PR into master will get its own custom URL that is visible on the PR page. QA & validate changes on that URL before merging into the deploy branch. 
@@ -127,12 +127,12 @@ Each PR into master will get its own custom URL that is visible on the PR page. 
 
 ## 👏🏽 Contributing Guidelines 
 
-We keep an updated list of bugs/feature requests in [Github Issues](https://github.com/OlympusDAO/olympusdao/issues). 
+We keep an updated list of bugs/feature requests in [Github Issues](https://github.com/TazorDAO/Tazordao/issues). 
 
 
-![GitHub issues](https://img.shields.io/github/issues/olympusdao/olympusdao?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/Tazordao/Tazordao?style=flat-square)
 
-Filter by ["good first issue"](https://github.com/OlympusDAO/olympusdao/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) to get your feet wet!
+Filter by ["good first issue"](https://github.com/TazorDAO/Tazordao/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) to get your feet wet!
 Once you submit a PR, our CI will generate a temporary testing URL where you can validate your changes. Tag any of the gatekeepers on the review to merge them into master. 
 
 *__NOTE__*: For big changes associated with feature releases/milestones, they will be merged onto the `develop` branch for more thorough QA before a final merge to `master`
