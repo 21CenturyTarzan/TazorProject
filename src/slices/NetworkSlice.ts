@@ -61,6 +61,38 @@ export const initializeNetwork = createAsyncThunk(
           networkName = "Polygon";
           uri = NodeHelper.getMainnetURI(id);
           break;
+        case 361:
+          networkName = "Theta";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
+        case 8217:
+          networkName = "Klaytn";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
+        case 1666600000:
+          networkName = "Harmony";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
+        case 40:
+          networkName = "Telos";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
+        case 19:
+          networkName = "Songbird";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
+        case 42220:
+          networkName = "Celo";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
+        case 1285:
+          networkName = "Moonriver";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
+        case 888:
+          networkName = "Wanchain";
+          uri = NodeHelper.getMainnetURI(id);
+          break;
         default:
           supported = false;
           networkName = "Unsupported Network";
@@ -102,6 +134,7 @@ export const switchNetwork = createAsyncThunk(
     } catch (e) {
       // If the chain has not been added to the user's wallet
       // @ts-ignore
+      // console.log("[tz]: swtich network", e.code);
       if (e.code === 4902) {
         const network = NETWORKS[networkId];
         const params = [

@@ -62,7 +62,23 @@ function ConnectMenu({ theme }) {
       case 250:
         return "https://ftmscan.com/tx/" + txnHash;
       case 137:
-        return "https://polygonscan.com//tx/" + txnHash;
+        return "https://polygonscan.com/tx/" + txnHash;
+      case 361:
+        return "https://explorer.thetatoken.org" + txnHash;
+      case 8217:
+        return "https://scope.klaytn.com" + txnHash;
+      case 1666600000:
+        return "https://explorer.harmony.one" + txnHash;
+      case 40:
+        return "https://telos.net/" + txnHash;
+      case 19:
+        return "https://songbird-explorer.flare.network" + txnHash;
+      case 42220:
+        return "https://explorer.celo.org" + txnHash;
+      case 1285:
+        return "https://blockscout.moonriver.moonbeam.network/" + txnHash;
+      case 888:
+        return "https://www.wanscan.org/" + txnHash;
     }
   };
 

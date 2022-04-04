@@ -55,6 +55,16 @@ const Presale = memo(() => {
     if (networkId == 1 || networkId == 3) setNativeTokenName("ETH");
     else if (networkId == 56 || networkId == 97) setNativeTokenName("BNB");
     else if (networkId == 43113 || networkId == 43114) setNativeTokenName("AVAX");
+    else if (networkId == 250) setNativeTokenName("FTM");
+    else if (networkId == 137) setNativeTokenName("MATIC");
+    else if (networkId == 361) setNativeTokenName("Theta");
+    else if (networkId == 8217) setNativeTokenName("KLAY");
+    else if (networkId == 1666600000) setNativeTokenName("ONE");
+    else if (networkId == 40) setNativeTokenName("TLOS");
+    else if (networkId == 42220) setNativeTokenName("CELO");
+    else if (networkId == 1285) setNativeTokenName("MOVR");
+    else if (networkId == 888) setNativeTokenName("WAN");
+    else if (networkId == 19) setNativeTokenName("SGB");
 
     let interval: number | NodeJS.Timer = 0;
     if (secondsToRefresh > 0) {

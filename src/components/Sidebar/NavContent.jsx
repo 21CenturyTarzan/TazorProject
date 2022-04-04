@@ -77,7 +77,15 @@ function NavContent() {
               networkId == 43114 ||
               networkId == 43113 ||
               networkId == 250 ||
-              networkId == 137 ? (
+              networkId == 137 ||
+              networkId == 361 ||
+              networkId == 8217 ||
+              networkId == 1666600000 ||
+              networkId == 40 ||
+              networkId == 19 ||
+              networkId == 42220 ||
+              networkId == 1285 ||
+              networkId == 888 ? (
                 <>
                   <Link
                     component={NavLink}

@@ -136,7 +136,7 @@ function OhmMenu() {
           return (
             <Fade {...TransitionProps} timeout={100}>
               <Paper className="ohm-menu" elevation={1}>
-                <Box component="div" className="buy-tokens">
+                {/* <Box component="div" className="buy-tokens">
                   <Link href={`https://pancakeswap.finance/swap`} target="_blank" rel="noreferrer">
                     <Button size="large" variant="contained" color="secondary" fullWidth>
                       <Typography align="left">
@@ -145,7 +145,7 @@ function OhmMenu() {
                       </Typography>
                     </Button>
                   </Link>
-                </Box>
+                </Box> */}
 
                 {/* <Box component="div" className="data-links">
                   <Divider color="secondary" className="less-margin" />

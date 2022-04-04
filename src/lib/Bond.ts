@@ -19,6 +19,14 @@ export enum NetworkID {
   Avalanche = 43114,
   Fantom = 250,
   Polygon = 137,
+  Theta = 361,
+  Klaytn = 8217,
+  Harmony = 1666600000,
+  Telos = 40,
+  Metis = 19,
+  Celo = 42220,
+  Moonriver = 1285,
+  Wanchain = 888,
 }
 
 export enum BondType {
@@ -42,6 +50,14 @@ export interface NetworkAddresses {
   [NetworkID.AvalancheTestnet]?: BondAddresses;
   [NetworkID.Fantom]?: BondAddresses;
   [NetworkID.Polygon]?: BondAddresses;
+  [NetworkID.Theta]?: BondAddresses;
+  [NetworkID.Klaytn]?: BondAddresses;
+  [NetworkID.Harmony]?: BondAddresses;
+  [NetworkID.Telos]?: BondAddresses;
+  [NetworkID.Metis]?: BondAddresses;
+  [NetworkID.Celo]?: BondAddresses;
+  [NetworkID.Moonriver]?: BondAddresses;
+  [NetworkID.Wanchain]?: BondAddresses;
 }
 
 export interface BondNameOnNetwork {
@@ -55,6 +71,14 @@ export interface BondNameOnNetwork {
   [NetworkID.AvalancheTestnet]?: string;
   [NetworkID.Fantom]?: string;
   [NetworkID.Polygon]?: string;
+  [NetworkID.Theta]?: string;
+  [NetworkID.Klaytn]?: string;
+  [NetworkID.Harmony]?: string;
+  [NetworkID.Telos]?: string;
+  [NetworkID.Metis]?: string;
+  [NetworkID.Celo]?: string;
+  [NetworkID.Moonriver]?: string;
+  [NetworkID.Wanchain]?: string;
 }
 
 export interface BondImageOnNetwork {
@@ -68,6 +92,14 @@ export interface BondImageOnNetwork {
   [NetworkID.AvalancheTestnet]?: React.ReactNode;
   [NetworkID.Fantom]?: React.ReactNode;
   [NetworkID.Polygon]?: React.ReactNode;
+  [NetworkID.Theta]?: React.ReactNode;
+  [NetworkID.Klaytn]?: React.ReactNode;
+  [NetworkID.Harmony]?: React.ReactNode;
+  [NetworkID.Telos]?: React.ReactNode;
+  [NetworkID.Metis]?: React.ReactNode;
+  [NetworkID.Celo]?: React.ReactNode;
+  [NetworkID.Moonriver]?: React.ReactNode;
+  [NetworkID.Wanchain]?: React.ReactNode;
 }
 
 export interface Available {
@@ -81,6 +113,14 @@ export interface Available {
   [NetworkID.AvalancheTestnet]: boolean;
   [NetworkID.Fantom]?: boolean;
   [NetworkID.Polygon]?: boolean;
+  [NetworkID.Theta]?: boolean;
+  [NetworkID.Klaytn]?: boolean;
+  [NetworkID.Harmony]?: boolean;
+  [NetworkID.Telos]?: boolean;
+  [NetworkID.Metis]?: boolean;
+  [NetworkID.Celo]?: boolean;
+  [NetworkID.Moonriver]?: boolean;
+  [NetworkID.Wanchain]?: boolean;
 }
 
 interface BondOpts {
