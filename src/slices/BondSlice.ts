@@ -212,16 +212,26 @@ export const calcBondDetails = createAsyncThunk(
 export const calcTokenDetails = createAsyncThunk(
   "bonding/calcTokenDetails",
   async ({ lpToken, provider, networkID, address }: IBaseTokenAsyncThunk, { dispatch }) => {
-    const { tokenNum, stableNum, marketCap } = await lpToken.getLpTokenAssetNum(networkID, provider);
-    console.log(tokenNum, stableNum);
-    const tokenName = await lpToken.getTokenName(networkID);
-    return {
-      name: lpToken.name,
-      tokenName: tokenName,
-      tokenNum,
-      marketCap,
-      stableNum,
-    };
+    try {
+      const { tokenNum, stableNum, marketCap } = await lpToken.getLpTokenAssetNum(networkID, provider);
+      const tokenName = await lpToken.getTokenName(networkID);
+      return {
+        name: lpToken.name,
+        tokenName: tokenName,
+        tokenNum,
+        marketCap,
+        stableNum,
+      };
+    } catch (e: unknown) {
+      const tokenName = await lpToken.getTokenName(networkID);
+      return {
+        name: lpToken.name,
+        tokenName: tokenName,
+        tokenNum: 0,
+        marketCap: 0,
+        stableNum: 0,
+      };
+    }
   },
 );
 

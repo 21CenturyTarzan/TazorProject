@@ -705,6 +705,15 @@ export const VIEWS_FOR_NETWORK: { [key: number]: IViewsForNetwork } = {
     bonds: true,
     network: true,
   },
+  361: {
+    dashboard: true,
+    stake: true,
+    wrap: false,
+    zap: false,
+    threeTogether: true,
+    bonds: true,
+    network: true,
+  },
   25: {
     dashboard: true,
     stake: true,

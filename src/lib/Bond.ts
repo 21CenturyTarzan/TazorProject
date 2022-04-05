@@ -20,10 +20,10 @@ export enum NetworkID {
   Fantom = 250,
   Polygon = 137,
   Theta = 361,
-  Klaytn = 8217,
+  Songbird = 19,
   Harmony = 1666600000,
   Telos = 40,
-  Metis = 19,
+  Metis = 1088,
   Celo = 42220,
   Moonriver = 1285,
   Wanchain = 888,
@@ -51,7 +51,7 @@ export interface NetworkAddresses {
   [NetworkID.Fantom]?: BondAddresses;
   [NetworkID.Polygon]?: BondAddresses;
   [NetworkID.Theta]?: BondAddresses;
-  [NetworkID.Klaytn]?: BondAddresses;
+  [NetworkID.Songbird]?: BondAddresses;
   [NetworkID.Harmony]?: BondAddresses;
   [NetworkID.Telos]?: BondAddresses;
   [NetworkID.Metis]?: BondAddresses;
@@ -72,7 +72,7 @@ export interface BondNameOnNetwork {
   [NetworkID.Fantom]?: string;
   [NetworkID.Polygon]?: string;
   [NetworkID.Theta]?: string;
-  [NetworkID.Klaytn]?: string;
+  [NetworkID.Songbird]?: string;
   [NetworkID.Harmony]?: string;
   [NetworkID.Telos]?: string;
   [NetworkID.Metis]?: string;
@@ -93,7 +93,7 @@ export interface BondImageOnNetwork {
   [NetworkID.Fantom]?: React.ReactNode;
   [NetworkID.Polygon]?: React.ReactNode;
   [NetworkID.Theta]?: React.ReactNode;
-  [NetworkID.Klaytn]?: React.ReactNode;
+  [NetworkID.Songbird]?: React.ReactNode;
   [NetworkID.Harmony]?: React.ReactNode;
   [NetworkID.Telos]?: React.ReactNode;
   [NetworkID.Metis]?: React.ReactNode;
@@ -114,7 +114,7 @@ export interface Available {
   [NetworkID.Fantom]?: boolean;
   [NetworkID.Polygon]?: boolean;
   [NetworkID.Theta]?: boolean;
-  [NetworkID.Klaytn]?: boolean;
+  [NetworkID.Songbird]?: boolean;
   [NetworkID.Harmony]?: boolean;
   [NetworkID.Telos]?: boolean;
   [NetworkID.Metis]?: boolean;

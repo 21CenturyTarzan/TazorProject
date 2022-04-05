@@ -22,7 +22,7 @@ export function LPPoolTableData({ bond }) {
 
   const [tokenNum, setTokenNum] = useState(0);
   const [stableNum, setStableNum] = useState(0);
-
+  console.log("[tz]:tokenName=====>", lpTokenInfo);
   return (
     <TableRow id={`${bondName}--claim`}>
       <TableCell align="left" className="bond-name-cell">
