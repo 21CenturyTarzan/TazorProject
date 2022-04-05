@@ -89,17 +89,39 @@ export const calcBondDetails = createAsyncThunk(
     if (!value || value === "") {
       value = "0";
     }
+
     const amountInWei = ethers.utils.parseEther(value);
 
     let bondPrice = BigNumber.from(0),
       bondDiscount = 0,
       valuation = 0,
       bondQuote: BigNumberish = BigNumber.from(0);
-    const bondContract = bond.getContractForBond(networkID, provider);
-    const bondCalcContract = getBondCalculator(networkID, provider, bond.v2Bond);
 
-    const terms = await bondContract.terms();
-    const maxBondPrice = await bondContract.maxPayout();
+    let bondContract: any;
+    let bondCalcContract: any;
+    let terms;
+    let maxBondPrice;
+    try {
+      bondContract = bond.getContractForBond(networkID, provider);
+      bondCalcContract = getBondCalculator(networkID, provider, bond.v2Bond);
+      terms = await bondContract.terms();
+      maxBondPrice = await bondContract.maxPayout();
+    } catch (e: unknown) {
+      const logoImg = bond.getBondImage(networkID);
+      return {
+        bond: bond.name,
+        bondDiscount: 0,
+        debtRatio: 0,
+        bondQuote: 0,
+        purchased: 0,
+        vestingTerm: 0,
+        maxBondPrice: 0,
+        bondPrice: 0,
+        marketPrice: 0,
+        logoImg: logoImg,
+      };
+    }
+
     let debtRatio: BigNumberish;
     try {
       // TODO (appleseed): improve this logic
@@ -111,6 +133,15 @@ export const calcBondDetails = createAsyncThunk(
       debtRatio = Number(debtRatio.toString()) / Math.pow(10, 9);
     } catch (e) {
       debtRatio = BigNumber.from("0");
+    }
+
+    if (bond.name === "aave") {
+      console.log("1111");
+      debtRatio = BigNumber.from("1");
+    }
+    if (bond.name === "sushi") {
+      console.log("3333");
+      debtRatio = BigNumber.from("1");
     }
 
     let marketPrice: number = 0;
@@ -191,21 +222,37 @@ export const calcBondDetails = createAsyncThunk(
     }
 
     // Calculate bonds purchased
-    let purchased = await bond.getTreasuryBalance(networkID, provider);
-    const logoImg = bond.getBondImage(networkID);
-
-    return {
-      bond: bond.name,
-      bondDiscount,
-      debtRatio: Number(debtRatio.toString()),
-      bondQuote: Number(bondQuote.toString()),
-      purchased,
-      vestingTerm: Number(terms.vestingTerm.toString()),
-      maxBondPrice: Number(maxBondPrice.toString()) / Math.pow(10, 9),
-      bondPrice: Number(bondPrice.toString()) / Math.pow(10, 18),
-      marketPrice: marketPrice,
-      logoImg: logoImg,
-    };
+    let purchased = 0;
+    try {
+      await bond.getTreasuryBalance(networkID, provider);
+      const logoImg = bond.getBondImage(networkID);
+      return {
+        bond: bond.name,
+        bondDiscount,
+        debtRatio: Number(debtRatio.toString()),
+        bondQuote: Number(bondQuote.toString()),
+        purchased,
+        vestingTerm: Number(terms.vestingTerm.toString()),
+        maxBondPrice: Number(maxBondPrice.toString()) / Math.pow(10, 9),
+        bondPrice: Number(bondPrice.toString()) / Math.pow(10, 18),
+        marketPrice: marketPrice,
+        logoImg: logoImg,
+      };
+    } catch (e: unknown) {
+      const logoImg = bond.getBondImage(networkID);
+      return {
+        bond: bond.name,
+        bondDiscount: 0,
+        debtRatio: 0,
+        bondQuote: 0,
+        purchased: 0,
+        vestingTerm: 0,
+        maxBondPrice: 0,
+        bondPrice: 0,
+        marketPrice: 0,
+        logoImg: logoImg,
+      };
+    }
   },
 );
 
@@ -412,6 +459,7 @@ interface IBondSlice {
 
 const setBondState = (state: IBondSlice, payload: any) => {
   const bond = payload.bond;
+  console.log("bond payload-1", state[bond], payload);
   const newState = { ...state[bond], ...payload };
   state[bond] = newState;
   state.loading = false;
@@ -444,6 +492,7 @@ const bondingSlice = createSlice({
         state.loading = true;
       })
       .addCase(calcBondDetails.fulfilled, (state, action) => {
+        console.log("calcBondDetails.fulfilled", action);
         setBondState(state, action.payload);
         state.loading = false;
       })

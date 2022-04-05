@@ -33,12 +33,12 @@ export async function getMarketPrice({ networkID, provider }: IBaseAsyncThunk) {
     const native_usdt_contract = tazor_native_token.getContractStableNative(networkID, provider);
     const reserves2 = await native_usdt_contract.getReserves();
     const nativeTokenPrice = Number(reserves2[0].toString()) / Number(reserves2[1].toString());
-    console.log("native token price", nativeTokenPrice);
-    console.log("tarzan:stable token===>", Number(reserves2[0].toString()));
-    console.log("tarzan:native token===>", Number(reserves2[1].toString()));
+    // console.log("native token price", nativeTokenPrice);
+    // console.log("tarzan:stable token===>", Number(reserves2[0].toString()));
+    // console.log("tarzan:native token===>", Number(reserves2[1].toString()));
     let marketPrice = Number(reserves[1].toString()) / Number(reserves[0].toString()) / 10 ** 9;
-    console.log("tarzan:tazor===>", Number(reserves[0].toString()) / 10 ** 9);
-    console.log("tarzan:native token===>", Number(reserves[1].toString()) / 10 ** 18);
+    // console.log("tarzan:tazor===>", Number(reserves[0].toString()) / 10 ** 9);
+    // console.log("tarzan:native token===>", Number(reserves[1].toString()) / 10 ** 18);
     marketPrice = marketPrice * nativeTokenPrice;
     return marketPrice;
   } else {
@@ -48,12 +48,12 @@ export async function getMarketPrice({ networkID, provider }: IBaseAsyncThunk) {
     const native_usdt_contract = tazor_native_token.getContractStableNative(networkID, provider);
     const reserves2 = await native_usdt_contract.getReserves();
     const nativeTokenPrice = (10 ** 12 * Number(reserves2[0].toString())) / Number(reserves2[1].toString());
-    console.log("native token price", nativeTokenPrice);
-    console.log("tarzan:stable token===>", Number(reserves2[0].toString()));
-    console.log("tarzan:native token===>", Number(reserves2[1].toString()));
+    // console.log("native token price", nativeTokenPrice);
+    // console.log("tarzan:stable token===>", Number(reserves2[0].toString()));
+    // console.log("tarzan:native token===>", Number(reserves2[1].toString()));
     let marketPrice = Number(reserves[1].toString()) / Number(reserves[0].toString()) / 10 ** 9;
-    console.log("tarzan:tazor===>", Number(reserves[0].toString()) / 10 ** 9);
-    console.log("tarzan:native token===>", Number(reserves[1].toString()) / 10 ** 18);
+    // console.log("tarzan:tazor===>", Number(reserves[0].toString()) / 10 ** 9);
+    // console.log("tarzan:native token===>", Number(reserves[1].toString()) / 10 ** 18);
     marketPrice = marketPrice * nativeTokenPrice;
     return marketPrice;
   }

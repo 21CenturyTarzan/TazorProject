@@ -133,9 +133,6 @@ function NavContent() {
                   </Link>
                   <div className="dapp-menu-data discounts">
                     <div className="bond-discounts">
-                      <Typography variant="body2">
-                        <Trans>Bond discounts</Trans>
-                      </Typography>
                       {bonds.map((bond, i) => {
                         if (bond.getBondability(networkId) || bond.getLOLability(networkId)) {
                           return (
