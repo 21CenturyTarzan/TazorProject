@@ -37,6 +37,67 @@ import { ReactComponent as tazorMoonriverImg } from "src/assets/tokens/TAZOR-MOO
 import { ReactComponent as tazBNBImg } from "src/assets/tokens/TAZ-BNB.svg";
 import { ReactComponent as busdImg } from "src/assets/tokens/BUSD.svg";
 
+import { ReactComponent as aaveImg } from "src/assets/tokens/bonding/AAVE.svg";
+import { ReactComponent as apeImg } from "src/assets/tokens/bonding/APE.svg";
+import { ReactComponent as balImg } from "src/assets/tokens/bonding/BAL.svg";
+import { ReactComponent as beetsImg } from "src/assets/tokens/bonding/BEETS.svg";
+import { ReactComponent as blzzImg } from "src/assets/tokens/bonding/BLZZ.svg";
+import { ReactComponent as bnbImg } from "src/assets/tokens/bonding/BNB.svg";
+import { ReactComponent as booImg } from "src/assets/tokens/bonding/BOO.svg";
+import { ReactComponent as cakeImg } from "src/assets/tokens/bonding/CAKE.svg";
+import { ReactComponent as charmImg } from "src/assets/tokens/bonding/CHARM.svg";
+import { ReactComponent as compImg } from "src/assets/tokens/bonding/COMP.svg";
+import { ReactComponent as croImg } from "src/assets/tokens/bonding/CRO.svg";
+import { ReactComponent as crvImg } from "src/assets/tokens/bonding/CRV.svg";
+import { ReactComponent as epsImg } from "src/assets/tokens/bonding/EPS.svg";
+import { ReactComponent as exfiImg } from "src/assets/tokens/bonding/EXFI.svg";
+import { ReactComponent as finnImg } from "src/assets/tokens/bonding/FINN.svg";
+import { ReactComponent as fraxImg } from "src/assets/tokens/bonding/FRAX.svg";
+import { ReactComponent as ftmImg } from "src/assets/tokens/bonding/FTM.svg";
+import { ReactComponent as geistImg } from "src/assets/tokens/bonding/GEIST.svg";
+import { ReactComponent as jewelImg } from "src/assets/tokens/bonding/JEWEL.svg";
+import { ReactComponent as joeImg } from "src/assets/tokens/bonding/JOE.svg";
+import { ReactComponent as maticImg } from "src/assets/tokens/bonding/MATIC.svg";
+import { ReactComponent as mdxImg } from "src/assets/tokens/bonding/MDX.svg";
+import { ReactComponent as mfamImg } from "src/assets/tokens/bonding/MFAM.svg";
+import { ReactComponent as mkrImg } from "src/assets/tokens/bonding/MKR.svg";
+import { ReactComponent as mobiImg } from "src/assets/tokens/bonding/MOBI.svg";
+import { ReactComponent as mooImg } from "src/assets/tokens/bonding/MOO.svg";
+import { ReactComponent as mtrgImg } from "src/assets/tokens/bonding/MTRG.svg";
+import { ReactComponent as qiImg } from "src/assets/tokens/bonding/QI.svg";
+import { ReactComponent as quickImg } from "src/assets/tokens/bonding/QUICK.svg";
+import { ReactComponent as romeImg } from "src/assets/tokens/bonding/ROME.svg";
+import { ReactComponent as sandImg } from "src/assets/tokens/bonding/SAND.svg";
+import { ReactComponent as screamImg } from "src/assets/tokens/bonding/SCREAM.svg";
+import { ReactComponent as sfinImg } from "src/assets/tokens/bonding/SFIN.svg";
+import { ReactComponent as shibImg } from "src/assets/tokens/bonding/SHIB.svg";
+import { ReactComponent as solarImg } from "src/assets/tokens/bonding/SOLAR.svg";
+import { ReactComponent as solidImg } from "src/assets/tokens/bonding/SOLID.svg";
+import { ReactComponent as spiritImg } from "src/assets/tokens/bonding/SPIRIT.svg";
+import { ReactComponent as sushiImg } from "src/assets/tokens/bonding/SUSHI.svg";
+import { ReactComponent as synImg } from "src/assets/tokens/bonding/SYN.svg";
+import { ReactComponent as tarotImg } from "src/assets/tokens/bonding/TAROT.svg";
+import { ReactComponent as tbondImg } from "src/assets/tokens/bonding/TBOND.svg";
+import { ReactComponent as tdropImg } from "src/assets/tokens/bonding/TDROP.svg";
+import { ReactComponent as temImg } from "src/assets/tokens/bonding/TEM.svg";
+import { ReactComponent as timeImg } from "src/assets/tokens/bonding/TIME.svg";
+import { ReactComponent as tombImg } from "src/assets/tokens/bonding/TOMB.svg";
+import { ReactComponent as tranqImg } from "src/assets/tokens/bonding/TRANQ.svg";
+import { ReactComponent as tshareImg } from "src/assets/tokens/bonding/TSHARE.svg";
+import { ReactComponent as ubeImg } from "src/assets/tokens/bonding/UBE.svg";
+import { ReactComponent as uniImg } from "src/assets/tokens/bonding/UNI.svg";
+import { ReactComponent as voltImg } from "src/assets/tokens/bonding/VOLT.svg";
+import { ReactComponent as wagmiImg } from "src/assets/tokens/bonding/WAGMI.svg";
+import { ReactComponent as warpImg } from "src/assets/tokens/bonding/WARP.svg";
+import { ReactComponent as xvsImg } from "src/assets/tokens/bonding/XVS.svg";
+import { ReactComponent as zapImg } from "src/assets/tokens/bonding/ZAP.svg";
+import { ReactComponent as zlkImg } from "src/assets/tokens/bonding/ZLK.svg";
+import { ReactComponent as tfuelImg } from "src/assets/tokens/bonding/TFUEL.svg";
+import { ReactComponent as btcImg } from "src/assets/tokens/bonding/BTC.svg";
+import { ReactComponent as usdcImg } from "src/assets/tokens/bonding/USDC.svg";
+import { ReactComponent as avaxImg } from "src/assets/tokens/AVAX.svg";
+import { ReactComponent as ethImg } from "src/assets/tokens/wETH.svg";
+
 import { abi as FraxOhmBondContract } from "src/abi/bonds/OhmFraxContract.json";
 import { abi as BondOhmDaiContract } from "src/abi/bonds/OhmDaiContract.json";
 import { abi as BondOhmLusdContract } from "src/abi/bonds/OhmLusdContract.json";
@@ -72,22 +133,22 @@ export const mai = new StableBond({
   payoutToken: "OHM",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: MaiImg,
-    [NetworkID.Testnet]: MaiImg,
-    [NetworkID.BSCMainnet]: MaiImg,
-    [NetworkID.BSCTestnet]: MaiImg,
+    [NetworkID.Mainnet]: apeImg,
+    [NetworkID.Testnet]: apeImg,
+    [NetworkID.BSCMainnet]: cakeImg,
+    [NetworkID.BSCTestnet]: cakeImg,
     [NetworkID.Arbitrum]: MaiImg,
     [NetworkID.ArbitrumTestnet]: MaiImg,
     [NetworkID.Avalanche]: MaiImg,
     [NetworkID.AvalancheTestnet]: MaiImg,
     [NetworkID.Fantom]: MaiImg,
     [NetworkID.Polygon]: MaiImg,
-    [NetworkID.Theta]: MaiImg,
-    [NetworkID.Songbird]: MaiImg,
-    [NetworkID.Harmony]: MaiImg,
-    [NetworkID.Telos]: MaiImg,
+    [NetworkID.Theta]: tfuelImg,
+    [NetworkID.Songbird]: sfinImg,
+    [NetworkID.Harmony]: tranqImg,
+    [NetworkID.Telos]: zapImg,
     [NetworkID.Metis]: MaiImg,
-    [NetworkID.Celo]: MaiImg,
+    [NetworkID.Celo]: mooImg,
     [NetworkID.Moonriver]: MaiImg,
     [NetworkID.Wanchain]: MaiImg,
   },
@@ -248,23 +309,23 @@ export const dai = new StableBond({
   payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: DaiImg,
-    [NetworkID.Testnet]: DaiImg,
-    [NetworkID.BSCMainnet]: DaiImg,
-    [NetworkID.BSCTestnet]: DaiImg,
+    [NetworkID.Mainnet]: crvImg,
+    [NetworkID.Testnet]: crvImg,
+    [NetworkID.BSCMainnet]: xvsImg,
+    [NetworkID.BSCTestnet]: xvsImg,
     [NetworkID.Arbitrum]: DaiImg,
     [NetworkID.ArbitrumTestnet]: DaiImg,
-    [NetworkID.Avalanche]: DaiImg,
-    [NetworkID.AvalancheTestnet]: DaiImg,
-    [NetworkID.Fantom]: DaiImg,
-    [NetworkID.Polygon]: DaiImg,
-    [NetworkID.Theta]: DaiImg,
-    [NetworkID.Songbird]: DaiImg,
-    [NetworkID.Harmony]: DaiImg,
-    [NetworkID.Telos]: DaiImg,
+    [NetworkID.Avalanche]: qiImg,
+    [NetworkID.AvalancheTestnet]: qiImg,
+    [NetworkID.Fantom]: geistImg,
+    [NetworkID.Polygon]: quickImg,
+    [NetworkID.Theta]: tdropImg,
+    [NetworkID.Songbird]: exfiImg,
+    [NetworkID.Harmony]: jewelImg,
+    [NetworkID.Telos]: charmImg,
     [NetworkID.Metis]: DaiImg,
-    [NetworkID.Celo]: DaiImg,
-    [NetworkID.Moonriver]: DaiImg,
+    [NetworkID.Celo]: mobiImg,
+    [NetworkID.Moonriver]: mfamImg,
     [NetworkID.Wanchain]: DaiImg,
   },
   bondContractABI: DaiBondContract,
@@ -600,23 +661,23 @@ export const busd = new StableBond({
   payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: busdImg,
-    [NetworkID.Testnet]: busdImg,
+    [NetworkID.Mainnet]: mkrImg,
+    [NetworkID.Testnet]: mkrImg,
     [NetworkID.BSCMainnet]: busdImg,
     [NetworkID.BSCTestnet]: busdImg,
     [NetworkID.Arbitrum]: busdImg,
     [NetworkID.ArbitrumTestnet]: busdImg,
-    [NetworkID.Avalanche]: busdImg,
-    [NetworkID.AvalancheTestnet]: busdImg,
-    [NetworkID.Fantom]: busdImg,
-    [NetworkID.Polygon]: busdImg,
+    [NetworkID.Avalanche]: joeImg,
+    [NetworkID.AvalancheTestnet]: joeImg,
+    [NetworkID.Fantom]: booImg,
+    [NetworkID.Polygon]: balImg,
     [NetworkID.Theta]: busdImg,
     [NetworkID.Songbird]: busdImg,
-    [NetworkID.Harmony]: busdImg,
-    [NetworkID.Telos]: busdImg,
+    [NetworkID.Harmony]: synImg,
+    [NetworkID.Telos]: btcImg,
     [NetworkID.Metis]: busdImg,
-    [NetworkID.Celo]: busdImg,
-    [NetworkID.Moonriver]: busdImg,
+    [NetworkID.Celo]: ubeImg,
+    [NetworkID.Moonriver]: romeImg,
     [NetworkID.Wanchain]: busdImg,
   },
   bondContractABI: BUSDBondContract,
@@ -777,23 +838,23 @@ export const aave = new StableBond({
   payoutToken: "OHM",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: MaiImg,
-    [NetworkID.Testnet]: MaiImg,
-    [NetworkID.BSCMainnet]: MaiImg,
-    [NetworkID.BSCTestnet]: MaiImg,
+    [NetworkID.Mainnet]: aaveImg,
+    [NetworkID.Testnet]: aaveImg,
+    [NetworkID.BSCMainnet]: epsImg,
+    [NetworkID.BSCTestnet]: epsImg,
     [NetworkID.Arbitrum]: MaiImg,
     [NetworkID.ArbitrumTestnet]: MaiImg,
-    [NetworkID.Avalanche]: MaiImg,
-    [NetworkID.AvalancheTestnet]: MaiImg,
-    [NetworkID.Fantom]: MaiImg,
-    [NetworkID.Polygon]: MaiImg,
-    [NetworkID.Theta]: MaiImg,
+    [NetworkID.Avalanche]: aaveImg,
+    [NetworkID.AvalancheTestnet]: aaveImg,
+    [NetworkID.Fantom]: screamImg,
+    [NetworkID.Polygon]: aaveImg,
+    [NetworkID.Theta]: mtrgImg,
     [NetworkID.Songbird]: MaiImg,
-    [NetworkID.Harmony]: MaiImg,
-    [NetworkID.Telos]: MaiImg,
+    [NetworkID.Harmony]: aaveImg,
+    [NetworkID.Telos]: usdcImg,
     [NetworkID.Metis]: MaiImg,
-    [NetworkID.Celo]: MaiImg,
-    [NetworkID.Moonriver]: MaiImg,
+    [NetworkID.Celo]: LusdImg,
+    [NetworkID.Moonriver]: zlkImg,
     [NetworkID.Wanchain]: MaiImg,
   },
   bondContractABI: LusdBondContract,
@@ -953,23 +1014,23 @@ export const sushi = new StableBond({
   payoutToken: "OHM",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: LusdImg,
-    [NetworkID.Testnet]: LusdImg,
-    [NetworkID.BSCMainnet]: LusdImg,
-    [NetworkID.BSCTestnet]: LusdImg,
+    [NetworkID.Mainnet]: sushiImg,
+    [NetworkID.Testnet]: sushiImg,
+    [NetworkID.BSCMainnet]: mdxImg,
+    [NetworkID.BSCTestnet]: mdxImg,
     [NetworkID.Arbitrum]: LusdImg,
     [NetworkID.ArbitrumTestnet]: LusdImg,
-    [NetworkID.Avalanche]: LusdImg,
-    [NetworkID.AvalancheTestnet]: LusdImg,
-    [NetworkID.Fantom]: LusdImg,
-    [NetworkID.Polygon]: LusdImg,
-    [NetworkID.Theta]: LusdImg,
+    [NetworkID.Avalanche]: crvImg,
+    [NetworkID.AvalancheTestnet]: crvImg,
+    [NetworkID.Fantom]: crvImg,
+    [NetworkID.Polygon]: crvImg,
+    [NetworkID.Theta]: voltImg,
     [NetworkID.Songbird]: LusdImg,
     [NetworkID.Harmony]: LusdImg,
-    [NetworkID.Telos]: LusdImg,
+    [NetworkID.Telos]: sushiImg,
     [NetworkID.Metis]: LusdImg,
-    [NetworkID.Celo]: LusdImg,
-    [NetworkID.Moonriver]: LusdImg,
+    [NetworkID.Celo]: sushiImg,
+    [NetworkID.Moonriver]: solarImg,
     [NetworkID.Wanchain]: LusdImg,
   },
   bondContractABI: LusdBondContract,
@@ -1125,23 +1186,23 @@ export const lusd = new StableBond({
   payoutToken: "OHM",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: LusdImg,
-    [NetworkID.Testnet]: LusdImg,
-    [NetworkID.BSCMainnet]: LusdImg,
-    [NetworkID.BSCTestnet]: LusdImg,
+    [NetworkID.Mainnet]: compImg,
+    [NetworkID.Testnet]: compImg,
+    [NetworkID.BSCMainnet]: synImg,
+    [NetworkID.BSCTestnet]: synImg,
     [NetworkID.Arbitrum]: LusdImg,
     [NetworkID.ArbitrumTestnet]: LusdImg,
-    [NetworkID.Avalanche]: LusdImg,
-    [NetworkID.AvalancheTestnet]: LusdImg,
-    [NetworkID.Fantom]: LusdImg,
-    [NetworkID.Polygon]: LusdImg,
+    [NetworkID.Avalanche]: timeImg,
+    [NetworkID.AvalancheTestnet]: timeImg,
+    [NetworkID.Fantom]: solidImg,
+    [NetworkID.Polygon]: synImg,
     [NetworkID.Theta]: LusdImg,
     [NetworkID.Songbird]: LusdImg,
-    [NetworkID.Harmony]: LusdImg,
-    [NetworkID.Telos]: LusdImg,
+    [NetworkID.Harmony]: balImg,
+    [NetworkID.Telos]: bnbImg,
     [NetworkID.Metis]: LusdImg,
     [NetworkID.Celo]: LusdImg,
-    [NetworkID.Moonriver]: LusdImg,
+    [NetworkID.Moonriver]: finnImg,
     [NetworkID.Wanchain]: LusdImg,
   },
   bondContractABI: LusdBondContract,
@@ -1301,23 +1362,23 @@ export const uni = new StableBond({
   payoutToken: "OHM",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: LusdImg,
-    [NetworkID.Testnet]: LusdImg,
+    [NetworkID.Mainnet]: uniImg,
+    [NetworkID.Testnet]: uniImg,
     [NetworkID.BSCMainnet]: LusdImg,
     [NetworkID.BSCTestnet]: LusdImg,
     [NetworkID.Arbitrum]: LusdImg,
     [NetworkID.ArbitrumTestnet]: LusdImg,
-    [NetworkID.Avalanche]: LusdImg,
-    [NetworkID.AvalancheTestnet]: LusdImg,
-    [NetworkID.Fantom]: LusdImg,
-    [NetworkID.Polygon]: LusdImg,
+    [NetworkID.Avalanche]: blzzImg,
+    [NetworkID.AvalancheTestnet]: blzzImg,
+    [NetworkID.Fantom]: tombImg,
+    [NetworkID.Polygon]: uniImg,
     [NetworkID.Theta]: LusdImg,
     [NetworkID.Songbird]: LusdImg,
-    [NetworkID.Harmony]: LusdImg,
-    [NetworkID.Telos]: LusdImg,
+    [NetworkID.Harmony]: wagmiImg,
+    [NetworkID.Telos]: ftmImg,
     [NetworkID.Metis]: LusdImg,
     [NetworkID.Celo]: LusdImg,
-    [NetworkID.Moonriver]: LusdImg,
+    [NetworkID.Moonriver]: synImg,
     [NetworkID.Wanchain]: LusdImg,
   },
   bondContractABI: LusdBondContract,
@@ -1465,7 +1526,7 @@ export const sand = new StableBond({
   payoutToken: "SAND",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: LusdImg,
+    [NetworkID.Mainnet]: sandImg,
     [NetworkID.Testnet]: LusdImg,
     [NetworkID.BSCMainnet]: LusdImg,
     [NetworkID.BSCTestnet]: LusdImg,
@@ -1473,15 +1534,15 @@ export const sand = new StableBond({
     [NetworkID.ArbitrumTestnet]: LusdImg,
     [NetworkID.Avalanche]: LusdImg,
     [NetworkID.AvalancheTestnet]: LusdImg,
-    [NetworkID.Fantom]: LusdImg,
-    [NetworkID.Polygon]: LusdImg,
+    [NetworkID.Fantom]: beetsImg,
+    [NetworkID.Polygon]: sandImg,
     [NetworkID.Theta]: LusdImg,
     [NetworkID.Songbird]: LusdImg,
-    [NetworkID.Harmony]: LusdImg,
-    [NetworkID.Telos]: LusdImg,
+    [NetworkID.Harmony]: sandImg,
+    [NetworkID.Telos]: maticImg,
     [NetworkID.Metis]: LusdImg,
     [NetworkID.Celo]: LusdImg,
-    [NetworkID.Moonriver]: LusdImg,
+    [NetworkID.Moonriver]: temImg,
     [NetworkID.Wanchain]: LusdImg,
   },
   bondContractABI: LusdBondContract,
@@ -1625,7 +1686,7 @@ export const shib = new StableBond({
   payoutToken: "OHM",
   v2Bond: false,
   bondIconSvg: {
-    [NetworkID.Mainnet]: LusdImg,
+    [NetworkID.Mainnet]: shibImg,
     [NetworkID.Testnet]: LusdImg,
     [NetworkID.BSCMainnet]: LusdImg,
     [NetworkID.BSCTestnet]: LusdImg,
@@ -1633,12 +1694,12 @@ export const shib = new StableBond({
     [NetworkID.ArbitrumTestnet]: LusdImg,
     [NetworkID.Avalanche]: LusdImg,
     [NetworkID.AvalancheTestnet]: LusdImg,
-    [NetworkID.Fantom]: LusdImg,
-    [NetworkID.Polygon]: LusdImg,
+    [NetworkID.Fantom]: spiritImg,
+    [NetworkID.Polygon]: warpImg,
     [NetworkID.Theta]: LusdImg,
     [NetworkID.Songbird]: LusdImg,
     [NetworkID.Harmony]: LusdImg,
-    [NetworkID.Telos]: LusdImg,
+    [NetworkID.Telos]: avaxImg,
     [NetworkID.Metis]: LusdImg,
     [NetworkID.Celo]: LusdImg,
     [NetworkID.Moonriver]: LusdImg,
@@ -1717,6 +1778,166 @@ export const shib = new StableBond({
     [NetworkID.AvalancheTestnet]: false,
     [NetworkID.Fantom]: true,
     [NetworkID.Polygon]: true,
+    [NetworkID.Theta]: false,
+    [NetworkID.Songbird]: false,
+    [NetworkID.Harmony]: false,
+    [NetworkID.Telos]: true,
+    [NetworkID.Metis]: false,
+    [NetworkID.Celo]: false,
+    [NetworkID.Moonriver]: false,
+    [NetworkID.Wanchain]: false,
+  },
+  networkAddrs: {
+    [NetworkID.Mainnet]: {
+      bondAddress: "0x10C0f93f64e3C8D0a1b0f4B87d6155fd9e89D08D",
+      reserveAddress: "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+    },
+    [NetworkID.Testnet]: {
+      bondAddress: "0x3aD02C4E4D1234590E87A1f9a73B8E0fd8CF8CCa",
+      reserveAddress: "0x45754dF05AA6305114004358eCf8D04FF3B84e26",
+    },
+    [NetworkID.Fantom]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Polygon]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Theta]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Songbird]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Harmony]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Telos]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Metis]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Celo]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Moonriver]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+    [NetworkID.Wanchain]: {
+      bondAddress: "0xe657DcD108B440845B27C15AED878f20b40D8b3F",
+      reserveAddress: "0x08e3A3b0cD19fD8Fe515934f1877456Ebe9F3f03",
+    },
+  },
+});
+
+export const eleven = new StableBond({
+  name: "eleven",
+  displayName: "ELEVEN",
+  bondToken: "ELEVEN",
+  payoutToken: "OHM",
+  v2Bond: false,
+  bondIconSvg: {
+    [NetworkID.Mainnet]: croImg,
+    [NetworkID.Testnet]: croImg,
+    [NetworkID.BSCMainnet]: LusdImg,
+    [NetworkID.BSCTestnet]: LusdImg,
+    [NetworkID.Arbitrum]: LusdImg,
+    [NetworkID.ArbitrumTestnet]: LusdImg,
+    [NetworkID.Avalanche]: LusdImg,
+    [NetworkID.AvalancheTestnet]: LusdImg,
+    [NetworkID.Fantom]: tshareImg,
+    [NetworkID.Polygon]: warpImg,
+    [NetworkID.Theta]: LusdImg,
+    [NetworkID.Songbird]: LusdImg,
+    [NetworkID.Harmony]: LusdImg,
+    [NetworkID.Telos]: ethImg,
+    [NetworkID.Metis]: LusdImg,
+    [NetworkID.Celo]: LusdImg,
+    [NetworkID.Moonriver]: LusdImg,
+    [NetworkID.Wanchain]: LusdImg,
+  },
+  bondContractABI: LusdBondContract,
+  tokenName: {
+    [NetworkID.Mainnet]: "CRO",
+    [NetworkID.Testnet]: "CRO",
+    [NetworkID.BSCMainnet]: "LUSD",
+    [NetworkID.BSCTestnet]: "LUSD",
+    [NetworkID.Arbitrum]: "LUSD",
+    [NetworkID.ArbitrumTestnet]: "LUSD",
+    [NetworkID.Avalanche]: "LUSD",
+    [NetworkID.AvalancheTestnet]: "LUSD",
+    [NetworkID.Fantom]: "TSHARE",
+    [NetworkID.Polygon]: "WARP",
+    [NetworkID.Theta]: "LUSD",
+    [NetworkID.Songbird]: "LUSD",
+    [NetworkID.Harmony]: "LUSD",
+    [NetworkID.Telos]: "ETH",
+    [NetworkID.Metis]: "LUSD",
+    [NetworkID.Celo]: "LUSD",
+    [NetworkID.Moonriver]: "LUSD",
+    [NetworkID.Wanchain]: "LUSD",
+  },
+  isBondable: {
+    [NetworkID.Mainnet]: true,
+    [NetworkID.Testnet]: true,
+    [NetworkID.BSCMainnet]: false,
+    [NetworkID.BSCTestnet]: false,
+    [NetworkID.Arbitrum]: false,
+    [NetworkID.ArbitrumTestnet]: false,
+    [NetworkID.Avalanche]: false,
+    [NetworkID.AvalancheTestnet]: false,
+    [NetworkID.Fantom]: true,
+    [NetworkID.Polygon]: false,
+    [NetworkID.Theta]: false,
+    [NetworkID.Songbird]: false,
+    [NetworkID.Harmony]: false,
+    [NetworkID.Telos]: true,
+    [NetworkID.Metis]: false,
+    [NetworkID.Celo]: false,
+    [NetworkID.Moonriver]: false,
+    [NetworkID.Wanchain]: false,
+  },
+  isLOLable: {
+    [NetworkID.Mainnet]: false,
+    [NetworkID.Testnet]: false,
+    [NetworkID.BSCMainnet]: false,
+    [NetworkID.BSCTestnet]: false,
+    [NetworkID.Arbitrum]: false,
+    [NetworkID.ArbitrumTestnet]: false,
+    [NetworkID.Avalanche]: false,
+    [NetworkID.AvalancheTestnet]: false,
+    [NetworkID.Fantom]: false,
+    [NetworkID.Polygon]: false,
+    [NetworkID.Theta]: false,
+    [NetworkID.Songbird]: false,
+    [NetworkID.Harmony]: false,
+    [NetworkID.Telos]: false,
+    [NetworkID.Metis]: false,
+    [NetworkID.Celo]: false,
+    [NetworkID.Moonriver]: false,
+    [NetworkID.Wanchain]: false,
+  },
+  LOLmessage: "",
+  isClaimable: {
+    [NetworkID.Mainnet]: true,
+    [NetworkID.Testnet]: true,
+    [NetworkID.BSCMainnet]: false,
+    [NetworkID.BSCTestnet]: false,
+    [NetworkID.Arbitrum]: false,
+    [NetworkID.ArbitrumTestnet]: false,
+    [NetworkID.Avalanche]: false,
+    [NetworkID.AvalancheTestnet]: false,
+    [NetworkID.Fantom]: true,
+    [NetworkID.Polygon]: false,
     [NetworkID.Theta]: false,
     [NetworkID.Songbird]: false,
     [NetworkID.Harmony]: false,
@@ -3019,6 +3240,7 @@ export const allBonds = [
   uni,
   sand,
   shib,
+  eleven,
   // eth,
   // cvx,
   // tazor_dai,

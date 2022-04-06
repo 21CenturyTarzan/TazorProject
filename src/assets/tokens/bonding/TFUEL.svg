@@ -1,0 +1,45 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+	<title>TAZOR-TFUEL-svg</title>
+	<defs>
+		<linearGradient id="tfuelg1" x1=".8" y1="16" x2="32.1" y2="16" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ffa50d"/>
+			<stop offset="1" stop-color="#fe5413"/>
+		</linearGradient>
+		<linearGradient id="tfuelg2" x1="11.7" y1="19.9" x2="21.2" y2="19.9" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ffa50d"/>
+			<stop offset="1" stop-color="#fe5413"/>
+		</linearGradient>
+		<image  width="2" height="13" id="tfuelimg1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAANCAMAAAC0Pk/DAAAAAXNSR0IB2cksfwAAADlQTFRFAAAA/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oO/5oOrLPzbQAAABN0Uk5TAEIf/Znxvc/Qs/8lNMD0oP5A7APiQQYAAAApSURBVHicDcfHAQAgCACxs4Jg339YzS8QiIlcqII2zDHQzpiszfm54A8M8ADT1zMseAAAAABJRU5ErkJggg=="/>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m-14.29 22.15v-9.46h9.22v-4.15h-16.77v4.15h3.4v1.66h-5.06v-7.48h20.09v7.48h-9.21v7.8zm-1.25 1.43h4.16v-7.98h1.66v9.64h-7.48v-15.46h10.84v1.67h-9.18zm-2.94-12.14h-2.07v-1.66h2.07z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.tfuels0 { fill: url(#tfuelg1) } 
+		.tfuels1 { fill: #000000 } 
+		.tfuels2 { fill: url(#tfuelg2) } 
+	</style>
+	<g id="g2080">
+		<g id="g2062">
+			<g id="g2060">
+				<ellipse id="SVGID_1_" class="tfuels0" cx="16.4" cy="16" rx="15.7" ry="16"/>
+			</g>
+		</g>
+		<g id="g2078">
+			<g id="g2065">
+				<path id="SVGID_4_" class="tfuels1" d="m22.5 11.1c-0.2 0.2-0.2 0.8-0.5 0.6 0 0-2.2-0.9-0.9-3.4 0.4-0.6 0.8-0.6 0.7-2.1 0.3 0.6 1.4 1.6 1.5 3.3 0.1 1.1-0.5 1.2-0.8 1.6z"/>
+			</g>
+			<g id="g2068">
+				<path id="SVGID_5_" class="tfuels1" d="m20.7 15c0.5-0.2 1.4-0.5 1.5-2.3 0.8 1.3 3.7 3.1 2.3 8.7-0.6 2.2-2.6 3.3-4.5 4.1-1.3 0.5-2.5 1.4-3 2.7 0 0-9.1-1.1-8.9-10.4 0.3-4.9 4.7-6.7 6.6-10.2 1-2.3 0.6-4.5 0.6-4.5 0 0 5.8 3.7 3.2 9.4-0.8 2 1.2 2.7 2.2 2.5z"/>
+			</g>
+			<g id="g2076">
+				<path id="SVGID_6_" class="tfuels2" d="m11.7 16.7h9.5v3.1h-3.2v3.3h-3.1v-3.3h-3.2z"/>
+			</g>
+		</g>
+	</g>
+	<use id="Layer 1" href="#tfuelimg1" x="0" y="10"/>
+	<g id="g69">
+		<g id="Clip-Path: Clip-Path: g71" clip-path="url(#cp1)">
+		</g>
+	</g>
+</svg>
