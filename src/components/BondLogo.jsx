@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 function BondLogo({ bond }) {
   let viewBox = "0 0 32 32";
   let style = { height: "32px", width: "32px" };
-  const networkId = useSelector(state => state.network.networkId);
+  // const networkId = useSelector(state => state.network.networkId);
   // Need more space if its an LP token
   // if (bond.isLP) {
   //   viewBox = "0 0 64 32";

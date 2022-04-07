@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { trim, formatCurrency } from "../../../../helpers";
+import { NETWORKS } from "../../../../constants";
 import { Metric, DashBoardMetric } from "src/components/Metric";
 import { t } from "@lingui/macro";
 
@@ -7,6 +8,17 @@ const sharedProps = {
   labelVariant: "h6",
   metricVariant: "h5",
 };
+
+// interface INetwork {
+//   chainName: string;
+//   chainId: number;
+//   nativeCurrency: INativeCurrency;
+//   rpcUrls: string[];
+//   blockExplorerUrls: string[];
+//   image: SVGImageElement;
+//   imageAltText: string;
+//   uri: () => string;
+// }
 
 export const MarketCap = () => {
   const marketCap = useSelector(state => state.app.marketCap || 0);
@@ -23,15 +35,11 @@ export const MarketCap = () => {
 export const TazTVLCap = () => {
   const marketCap = useSelector(state => state.app.tazMarketCap || 0);
   const networkId = useSelector(state => state.network.networkId);
-  let networkName;
-  if (networkId == 56 || networkId == 97) {
-    networkName = "BSC";
-  } else if (networkId == 43113 || networkId == 43114) {
-    networkName = "Avalanche";
-  } else if (networkId == 1 || networkId == 3) {
-    networkName = "Ethereum";
+  let networkName = "ETH";
+  let network = NETWORKS[networkId];
+  if (network != null) {
+    networkName = network["chainName"];
   }
-  console.log("[tz]: networkName: ", networkName);
   return (
     <DashBoardMetric
       label={`Total Taz Liquidity on ${networkName}`}
@@ -56,13 +64,10 @@ export const TazMarketCap = () => {
 
 export const TazorTVLCap = () => {
   const networkId = useSelector(state => state.network.networkId);
-  let networkName;
-  if (networkId == 56 || networkId == 97) {
-    networkName = "BSC";
-  } else if (networkId == 43113 || networkId == 43114) {
-    networkName = "Avalanche";
-  } else if (networkId == 1 || networkId == 3) {
-    networkName = "Ethereum";
+  let networkName = "ETH";
+  let network = NETWORKS[networkId];
+  if (network != null) {
+    networkName = network["chainName"];
   }
   const marketCap = useSelector(state => {
     console.log(state);
