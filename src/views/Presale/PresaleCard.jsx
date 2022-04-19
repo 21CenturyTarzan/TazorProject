@@ -4,13 +4,16 @@ import {
   Box,
   Grid,
   FormControl,
+  InputLabel,
   OutlinedInput,
   InputAdornment,
-  LinearProgress,
+  MenuItem,
+  Select,
 } from "@material-ui/core";
 import InfoTooltipMulti from "../../components/InfoTooltip/InfoTooltipMulti";
-import TabPanel from "../../components/TabPanel";
 import CardHeader from "../../components/CardHeader/CardHeader";
+import { useState, useEffect } from "react";
+import { useAppSelector } from "src/hooks";
 
 export function PresaleCard({
   title,
@@ -33,160 +36,228 @@ export function PresaleCard({
   tazInCirculation,
   tazBalance,
   tazPurchasedBalance,
+  setNetSelCallback,
 }) {
   console.log(currentETHBalance);
+  const [networkId, setNetworkId] = useState(80001);
+  const curNetworkId = useAppSelector(state => state.network.networkId);
+  useEffect(() => {
+    setNetworkId(curNetworkId);
+  }, [curNetworkId]);
+
+  const changeNet = e => {
+    setNetworkId(e.target.value);
+    setNetSelCallback(e);
+  };
+
   return (
     // <Paper className="ohm-card">
     <Box display="flex" flexDirection="column">
       <Grid container direction="row">
-        <Grid item xs={12} sm={6} md={6} lg={6} style={{ paddingRight: "10px" }}>
+        <Grid item xs={12} sm={6} md={6} lg={6} style={{ borderRight: "solid 1px"}}>
           <Grid>
             <FormControl variant="outlined" color="primary" fullWidth>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  <h1>Tazor $100 Per Token</h1>
-                  <h2 style={{ margin: "0px", fontWeight: "400", marginBottom: "20px" }}>+5% bonus</h2>
+                  <h1><span style={{color: "#7a66f8"}}>Tazor</span> price $10.00</h1>
                 </div>
               </div>
             </FormControl>
           </Grid>
-          <Grid alignItems="flex-end">
-            <FormControl variant="outlined" color="primary" fullWidth>
-              <div align="right">
-                <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                  Balance: {currentETHBalance} {tokenName}
-                </h3>
-              </div>
-              <OutlinedInput
-                type="number"
-                placeholder="0"
-                value={tazorEthBalance ? tazorEthBalance : ""}
-                onChange={e => setTazorETHBalanceCallback(e.target.value)}
-                labelWidth={0}
-              />
-            </FormControl>
-          </Grid>
-          <Grid container alignItems="flex-end" style={{ marginTop: "40px" }}>
-            <FormControl variant="outlined" color="primary" fullWidth>
+          <div style={{ padding: "10px", backgroundColor: "lightgreen", margin: "30px", color: "black", fontSize: "15px"}}>
+            <Grid alignItems="flex-end" >
               <div>
-                <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                  You will receive {tazorBalance} TAZOR + {Number(tazorBalance / 20).toFixed(2)} bonus.
-                </h3>
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div align="right">
+                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                      Balance: {currentETHBalance} {tokenName}
+                    </h3>
+                  </div>
+                </FormControl>  
               </div>
-              <OutlinedInput
-                id=""
-                placeholder="0"
-                value={tazorBalance ? tazorBalance : ""}
-                onChange={e => setTazorBalanceCallback(e.target.value)}
-                labelWidth={0}
-              />
-            </FormControl>
-          </Grid>
-          <Grid container alignItems="flex-end" style={{ marginTop: "30px" }}>
-            <Grid item xs={12} sm={4} md={4} lg={4} />
-            <Grid item xs={12} sm={4} md={4} lg={4}>
-              <FormControl variant="outlined" color="primary" style={{ display: "flex" }}>
-                {address ? modalButton[1] : modalButton[0]}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <Grid item xs={12} sm={6} md={6} lg={6} >
+                  <FormControl variant="outlined" color="primary" fullWidth>
+                    <OutlinedInput
+                      type="number"
+                      placeholder="0"
+                      value={tazorEthBalance ? tazorEthBalance : ""}
+                      style={{ color: "black"}}
+                      onChange={e => setTazorETHBalanceCallback(e.target.value)}
+                      labelWidth={0}
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4} >
+                  <FormControl className="ohm-input" variant="outlined">
+                    <InputLabel id="demo-simple-select-label">Currency</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={networkId}
+                      label="NETWORK"
+                      onChange={changeNet}
+                    >
+                      <MenuItem value={1}>ETH</MenuItem>
+                      <MenuItem value={97}>BNB</MenuItem>
+                      <MenuItem value={80001}>MATIC</MenuItem>
+                      <MenuItem value={43114}>AVAX</MenuItem>
+                      <MenuItem value={250}>FTM</MenuItem>
+                      <MenuItem value={361}>TFUEL</MenuItem>
+                      <MenuItem value={1666600000}>ONE</MenuItem>
+                      <MenuItem value={40}>TLOS</MenuItem>
+                      <MenuItem value={42220}>CELO</MenuItem>
+                      <MenuItem value={19}>SGB</MenuItem>
+                      <MenuItem value={1285}>MOVR</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </div>
+            </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+              <Grid item xs={12} sm={6} md={6} lg={6} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                      Minimum Amount: 
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                      1 Tazor 
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+            </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+              <Grid item xs={12} sm={6} md={6} lg={6} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                      You will receive: 
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <OutlinedInput
+                    id=""
+                    placeholder="0"
+                    value={tazorBalance ? tazorBalance : ""}
+                    style={{ color: "black" }}
+                    onChange={e => setTazorBalanceCallback(e.target.value)}
+                    labelWidth={0}
+                  />
+                </FormControl>
+              </Grid>
+            </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                      your purchased amount:
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                      {tazorPurchasedBalance} Tazor
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+            </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "30px" }}>
+              <Grid item xs={12} sm={4} md={4} lg={4} />
+              <Grid item xs={12} sm={4} md={4} lg={4}>
+                <FormControl variant="outlined" color="primary" style={{ display: "flex" }}>
+                  {address ? modalButton[1] : modalButton[0]}
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4} />
+            </Grid>
+            <Grid container>
+              <FormControl variant="outlined" color="primary" fullWidth>
+                <div align="center">
+                  <h2>Total Sold : {(Number(tazorPTotalSupply - tazorInCirculation) * 10 ).toFixed(3)} $</h2>
+                </div>
               </FormControl>
             </Grid>
-            <Grid item xs={12} sm={4} md={4} lg={4} />
-          </Grid>
-          <Grid container alignItems="flex-end" style={{ marginTop: "40px", padding: "30px" }}>
-            <FormControl variant="outlined" color="primary" fullWidth>
-              <div className="row" style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3 style={{ marginBottom: "5px" }}>0%</h3>
-                <h3 style={{ marginBottom: "5px" }}>100%</h3>
-              </div>
-              <LinearProgress
-                variant="determinate"
-                value={((tazorPTotalSupply - tazorInCirculation) * 100) / tazorPTotalSupply}
-              />
-            </FormControl>
-          </Grid>
-          <Grid container>
-            <FormControl variant="outlined" color="primary" fullWidth>
-              <div align="center">
-                <h2>TAZOR Supply : {tazorPTotalSupply}</h2>
-                <h2>Sold Tazor : {Number(tazorPTotalSupply - tazorInCirculation).toFixed(3)}</h2>
-              </div>
-            </FormControl>
-          </Grid>
+          </div>
         </Grid>
         {/* <Grid item xs={12} sm={1} md={1} lg={1}></Grid> */}
         {/* ===================   DIVIDER     ===============*/}
-        <Grid item xs={12} sm={6} md={6} lg={6} style={{ paddingLeft: "10px" }}>
+        <Grid item xs={12} sm={6} md={6} lg={6}>
           <Grid container>
             <FormControl variant="outlined" color="primary" fullWidth>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  <h1>Taz $1.00 Per Token</h1>
-                  <h2 style={{ margin: "0px", fontWeight: "400", marginBottom: "20px" }}>+5% bonus</h2>
+                  <h1><span style={{color: "#edaa45" }}>Taz</span> price $1.00</h1>
                 </div>
               </div>
             </FormControl>
           </Grid>
-          <Grid container alignItems="flex-end">
-            <FormControl variant="outlined" color="primary" fullWidth>
-              <div align="right">
-                <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                  Balance: {currentETHBalance} {tokenName}
-                </h3>
-              </div>
-              <OutlinedInput
-                type="number"
-                placeholder="0"
-                value={tazEthBalance ? tazEthBalance : ""}
-                onChange={e => setTazETHBalanceCallback(e.target.value)}
-                labelWidth={0}
-              />
-            </FormControl>
-          </Grid>
-          <Grid container alignItems="flex-end" style={{ marginTop: "40px" }}>
-            <FormControl variant="outlined" color="primary" fullWidth>
-              <div>
-                <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                  You will receive {tazBalance} TAZ + {Number(tazBalance / 20).toFixed(2)} bonus.
-                </h3>
-              </div>
-              <OutlinedInput
-                type="number"
-                id=""
-                placeholder="0"
-                value={tazBalance ? tazBalance : ""}
-                onChange={e => setTazBalanceCallback(e.target.value)}
-                labelWidth={0}
-              />
-            </FormControl>
-          </Grid>
-          <Grid container alignItems="flex-end" style={{ marginTop: "30px", display: "flex" }}>
-            <Grid item xs={12} sm={4} md={4} lg={4} />
-            <Grid item xs={12} sm={4} md={4} lg={4}>
-              <FormControl variant="outlined" color="primary" style={{ display: "flex" }}>
-                {address ? modalButton[2] : modalButton[0]}
+          <div style={{ padding: "10px", backgroundColor: "lightgrey", margin: "30px", color: "black" }}>
+            <Grid container alignItems="flex-end">
+              <FormControl variant="outlined" color="primary" fullWidth>
+                <div align="right">
+                  <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                    Balance: {currentETHBalance} {tokenName}
+                  </h3>
+                </div>
+                <OutlinedInput
+                  type="number"
+                  placeholder="0"
+                  value={tazEthBalance ? tazEthBalance : ""}
+                  onChange={e => setTazETHBalanceCallback(e.target.value)}
+                  labelWidth={0}
+                />
               </FormControl>
             </Grid>
-            <Grid item xs={12} sm={4} md={4} lg={4} />
-          </Grid>
-          <Grid container alignItems="flex-end" style={{ marginTop: "40px", padding: "30px" }}>
-            <FormControl variant="outlined" color="primary" fullWidth>
-              <div className="row" style={{ display: "flex", justifyContent: "space-between" }}>
-                <h3 style={{ marginBottom: "5px" }}>0%</h3>
-                <h3 style={{ marginBottom: "5px" }}>100%</h3>
-              </div>
-              <LinearProgress
-                variant="determinate"
-                value={((tazPTotalSupply - tazInCirculation) * 100) / tazPTotalSupply}
-              />
-            </FormControl>
-          </Grid>
-          <Grid container>
-            <FormControl variant="outlined" color="primary" fullWidth>
-              <div align="center">
-                <h2>TAZ Supply : {tazPTotalSupply}</h2>
-                <h2>Sold Taz : {Number(tazPTotalSupply - tazInCirculation).toFixed(3)}</h2>
-              </div>
-            </FormControl>
-          </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "40px" }}>
+              <FormControl variant="outlined" color="primary" fullWidth>
+                <div>
+                  <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                    You will receive {tazBalance} TAZ.
+                  </h3>
+                </div>
+                <OutlinedInput
+                  type="number"
+                  id=""
+                  placeholder="0"
+                  value={tazBalance ? tazBalance : ""}
+                  onChange={e => setTazBalanceCallback(e.target.value)}
+                  labelWidth={0}
+                />
+              </FormControl>
+            </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "30px", display: "flex" }}>
+              <Grid item xs={12} sm={4} md={4} lg={4} />
+              <Grid item xs={12} sm={4} md={4} lg={4}>
+                <FormControl variant="outlined" color="primary" style={{ display: "flex" }}>
+                  {address ? modalButton[2] : modalButton[0]}
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4} />
+            </Grid>
+            <Grid container>
+              <FormControl variant="outlined" color="primary" fullWidth>
+                <div align="center">
+                  <h2>Sold Taz : {Number(tazPTotalSupply - tazInCirculation).toFixed(3)}</h2>
+                </div>
+              </FormControl>
+            </Grid>
+          </div>
         </Grid>
       </Grid>
     </Box>

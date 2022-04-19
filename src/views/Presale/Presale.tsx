@@ -1,7 +1,7 @@
 import { memo, useState, ChangeEvent, useEffect } from "react";
 import "./presale.scss";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Paper, Grid, Box, Tab, Tabs, Zoom, Button, Container, useMediaQuery, Typography } from "@material-ui/core";
+import { Paper, Grid, Box, SvgIcon, Tabs, Zoom, Button, Container, useMediaQuery, Typography } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import CardHeader from "../../components/CardHeader/CardHeader";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,6 +18,8 @@ import { purchaseToken, redeem } from "../../slices/PresaleThunk";
 import PresaleTimer from "../../components/RebaseTimer/PresaleTimer";
 import { getBalances } from "../../slices/AccountSlice";
 import { MetricCollection } from "src/components/Metric";
+import { ReactComponent as TazorTokenImg } from "../../assets/tokens/token_TAZOR.svg";
+import { switchNetwork } from "../../slices/NetworkSlice";
 
 type InputEvent = ChangeEvent<HTMLInputElement>;
 
@@ -51,6 +53,12 @@ const Presale = memo(() => {
   };
   // --
 
+  const handleSwitchChain = async (id: any) => {
+    // return () => {
+    await dispatch(switchNetwork({ provider: provider, networkId: id }));
+    // };
+  };
+
   useEffect(() => {
     if (networkId == 1 || networkId == 3) setNativeTokenName("ETH");
     else if (networkId == 56 || networkId == 97) setNativeTokenName("BNB");
@@ -58,12 +66,10 @@ const Presale = memo(() => {
     else if (networkId == 250) setNativeTokenName("FTM");
     else if (networkId == 137) setNativeTokenName("MATIC");
     else if (networkId == 361) setNativeTokenName("Theta");
-    else if (networkId == 8217) setNativeTokenName("KLAY");
     else if (networkId == 1666600000) setNativeTokenName("ONE");
     else if (networkId == 40) setNativeTokenName("TLOS");
     else if (networkId == 42220) setNativeTokenName("CELO");
     else if (networkId == 1285) setNativeTokenName("MOVR");
-    else if (networkId == 888) setNativeTokenName("WAN");
     else if (networkId == 19) setNativeTokenName("SGB");
 
     let interval: number | NodeJS.Timer = 0;
@@ -166,6 +172,15 @@ const Presale = memo(() => {
     setTazBalance(Number(Number(value / tazPPrice).toFixed(3)));
   };
 
+  const setNetSelCallback = async (event: InputEvent) => {
+    const value = Number(event.target.value);
+    console.log("currentnetId", value);
+    handleSwitchChain(value);
+    // setdstNetName(value);
+    // await dispatch(getBridgeBalances({ address, networkID: networkId, provider, secondNetworkID: value }));
+    // setdstNetName(secondNetworkID);
+  };
+
   const onTazorPurchase = async (action: string) => {
     // eslint-disable-next-line no-restricted-globals
     if (isNaN(tazorEthBalance) || tazorEthBalance === 0) {
@@ -249,13 +264,13 @@ const Presale = memo(() => {
     <Button
       className="stake-button"
       variant="contained"
-      color="primary"
+      style={{backgroundColor: "#3831e5", color:"white"}}
       disabled={isPendingTxn(pendingTransactions, "buy_tazor")}
       onClick={() => {
         onTazorPurchase("tazor");
       }}
     >
-      {txnButtonText(pendingTransactions, "buy_tazor", "Submit")}
+      {txnButtonText(pendingTransactions, "buy_tazor", "Place Order")}
     </Button>,
   );
 
@@ -263,13 +278,13 @@ const Presale = memo(() => {
     <Button
       className="stake-button"
       variant="contained"
-      color="primary"
+      style={{backgroundColor: "#3831e5", color:"white"}}
       disabled={isPendingTxn(pendingTransactions, "buy_taz")}
       onClick={() => {
         onTazPurchase("taz");
       }}
     >
-      {txnButtonText(pendingTransactions, "buy_taz", "Submit")}
+      {txnButtonText(pendingTransactions, "buy_taz", "Place Order")}
     </Button>,
   );
 
@@ -318,9 +333,15 @@ const Presale = memo(() => {
         }}
       >
         <Zoom in={true}>
-          <Paper className={`ohm-card`}>
+          <Paper
+            className={`ohm-card`}
+            style={{
+              paddingLeft: isSmallScreen || isVerySmallScreen ? "0" : "4rem",
+              paddingRight: isSmallScreen || isVerySmallScreen ? "0" : "4rem",
+            }}
+          >
             <Box className="card-header" paddingBottom={2}>
-              <div className="row" style={{ display: "flex", justifyContent: "space-between" }}>
+              {/* <div className="row" style={{ display: "flex", justifyContent: "space-between" }}>
                 <Typography variant="h4" align="center">
                   <PresaleTimer />
                 </Typography>
@@ -343,13 +364,84 @@ const Presale = memo(() => {
                     <h3>Purchased Taz {tazPurchasedBalance}</h3>
                   </Typography>
                 )}
+              </div> */}
+              <div className="row">
+                <Typography align="right">
+                  <h1 style={{ color: "#edef8e" }}>PRESALE</h1>
+                </Typography>
               </div>
             </Box>
             <Box className="card-header" paddingBottom={2}>
-              {!isFairLaunchFinshed ? (
-                <Typography variant="h3" align="center">
-                  <Trans>Liquidity Generation Event</Trans>
+              <div className="row">
+                <Typography align="left">
+                  <h2>What is Tazor?</h2>
                 </Typography>
+              </div>
+              <div className="row">
+                <Typography align="left">
+                  <p style={{ textAlign: "justify", fontSize: "18px", fontWeight: 200 }}>
+                    Tazor is the first ever DEFI (Decentralized Finance) protocol that allows users to control their APR
+                    (Annual Percentage Rate) individually and separately from other users! Imagine Tazor is a Savings
+                    Account that allows you to determine the APR that you receive on your account. See more info {">"} (
+                    <a href="">Whitepaper</a>, <a href="">Tokenomics</a>, <a href="">Roadmap</a>,
+                    <a href="">Contracts </a>, <a href="">Audit</a> )
+                  </p>
+                </Typography>
+              </div>
+            </Box>
+            <Box className="card-header" paddingBottom={2}>
+              <div className="row">
+                <Typography align="left">
+                  <h2>Why 2 tokens during Presale?</h2>
+                </Typography>
+              </div>
+              <Grid container alignItems="flex-end" style={{ marginTop: "30px", alignItems: "normal" }}>
+                <Grid item xs={12} sm={12} md={6} lg={6} style={{ paddingRight: "20px" }}>
+                  <div className="row" style={{ paddingRight: "10px" }}>
+                    <img src="../../tazor_icon.png" style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
+                    <Typography style={{padding:"1px"}}>
+                      <h3 style={{ fontSize: "20px"}}> <span style={{color: "#7a66f8"}}>Tazor</span> token is used for earning APR</h3>
+                      <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>
+                      TAZOR token has no limit to its supply, however the TAZOR token is only minted whenever a Bond is
+                      purchased, so all TAZOR is backed by the Treasury</h2>
+                      <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>
+                        * The TAZOR token is NOT a reward token
+                      </h2>
+                    </Typography>
+                  </div>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} lg={6}>
+                  <div className="row" style={{ paddingRight: "10px" }}>
+                    <img src="../../taz_icon.png" style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
+                    <Typography style={{ padding: "1px" }}>
+                    <h3 style={{ fontSize: "20px"}}> <span style={{color: "#edaa45" }}>Taz</span> token is used to increase your APR</h3>
+                      <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>
+                      TAZ token has no limit to its supply, however the TAZ token is only minted whenever rewards are given to users who have 
+                      Staked TAZOR. A small percentage of Staked TAZ tokens are Burned from a specific user’s Staked TAZ Amount whenever 
+                      that user Stakes or Unstakes TAZOR, Stakes or Unstakes TAZ, or Claims TAZ Rewards. This results in users needing to top up 
+                      their Staked TAZ to maintain their desired APR on their staked TAZOR.</h2>
+                    </Typography>
+                  </div>
+                </Grid>
+              </Grid>
+            </Box>
+            <Box className="card-header" paddingBottom={2}>
+              <div className="row">
+                <Typography align="left">
+                  <h2>How to participate in Presale? (<a href="">video tutorial</a>)</h2>
+                  <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>1. Select which token you want to buy (TAZOR or TAZ)</h2>
+                  <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>2. Choose which Currency you want to buy with (ETH, BNB, MATIC, FTM, AVAX, ONE, TLOS, THATA, MOVR, CELO, SGB) </h2>
+                </Typography>
+              </div>
+            </Box>
+            <div className="row" style={{ display: "flex", justifyContent: "center" }}>
+              <Typography variant="h4" align="center">
+                <PresaleTimer />
+              </Typography>
+            </div>
+            <Box className="card-header" paddingBottom={2}>
+              {!isFairLaunchFinshed ? (
+                <div></div>
               ) : (
                 <Typography variant="h3" align="center" style={{ fontWeight: 600, marginTop: 20, lineHeight: 2 }}>
                   <Trans>Liquidity Generation Event</Trans>
@@ -383,6 +475,7 @@ const Presale = memo(() => {
                   tazPTotalSupply={tazPTotalSupply}
                   tazInCirculation={tazInCirculation}
                   tazBalance={tazBalance}
+                  setNetSelCallback={setNetSelCallback}
                 />
               ) : (
                 <FairLaunchCard
@@ -397,6 +490,13 @@ const Presale = memo(() => {
                 />
               )}
             </TabPanel>
+            <Box className="card-header" paddingBottom={2}>
+              <div className="row">
+                <Typography align="center">
+                  <h2>20% price increased when listed on exchange after presale</h2>
+                </Typography>
+              </div>
+            </Box>
           </Paper>
         </Zoom>
       </Container>

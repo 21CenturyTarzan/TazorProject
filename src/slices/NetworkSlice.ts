@@ -20,6 +20,7 @@ export const initializeNetwork = createAsyncThunk(
       let supported: boolean = true;
       const id: number = await provider.getNetwork().then(network => network.chainId);
 
+      NodeHelper.setNetworkID(id);
       switch (id) {
         case 1:
           networkName = "Ethereum";

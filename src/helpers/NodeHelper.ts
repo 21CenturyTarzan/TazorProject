@@ -28,7 +28,12 @@ export class NodeHelper {
 
   static currentRemovedNodes = JSON.parse(NodeHelper._storage.getItem(NodeHelper._invalidNodesKey) || "{}");
   static currentRemovedNodesURIs = Object.keys(NodeHelper.currentRemovedNodes);
+  static currentNetworkID = -1;
 
+  static setNetworkID(networkId: number) {
+    NodeHelper.currentNetworkID = networkId;
+    console.log("setcurrentNetId", NodeHelper.currentNetworkID);
+  }
   /**
    * remove the invalidNodes list entirely
    * should be used as a failsafe IF we have invalidated ALL nodes AND we have no fallbacks
@@ -124,7 +129,8 @@ export class NodeHelper {
    * @returns StaticJsonRpcProvider for querying
    */
   static getMainnetStaticProvider = () => {
-    return new StaticJsonRpcProvider(NodeHelper.getMainnetURI(97));
+    console.log("currentNetId", NodeHelper.currentNetworkID);
+    return new StaticJsonRpcProvider(NodeHelper.getMainnetURI(NodeHelper.currentNetworkID));
   };
 
   /**

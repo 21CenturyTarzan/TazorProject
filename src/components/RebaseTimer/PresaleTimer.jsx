@@ -49,11 +49,11 @@ function PresaleTimer() {
 
   return (
     <Box className="rebase-timer">
-      <Typography variant="h4">
+      <Typography variant="h3">
         {presaleLeftTime ? (
           presaleLeftTime > 0 ? (
             <>
-              <strong>{rebaseString}&nbsp;</strong>
+              <strong style={{color: "#edef8e" }}>( {rebaseString}&nbsp;) </strong>
             </>
           ) : (
             <strong>Finished</strong>

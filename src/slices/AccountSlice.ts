@@ -86,7 +86,7 @@ export const getBalances = createAsyncThunk(
       }
       if (!isFairLaunchFinshed) {
         tazorPPrice = Number(getDisplayBalance(await presaleContract._getTazorValInBNB(), 18)); // $100
-        tazPPrice = Number(tazorPPrice) / 100;
+        tazPPrice = Number(tazorPPrice) / 10;
         tazorInCirculation = Number(getDisplayBalance(await presaleContract.availableTazorTokensIDO(), 9));
         tazInCirculation = Number(getDisplayBalance(await presaleContract.availableTazTokensIDO(), 9));
         tazorPTotalSupply = Number(getDisplayBalance(await presaleContract.totalTazorTokens(), 9));

@@ -20,6 +20,9 @@
     margin: auto;
     .card-header {
       margin-bottom: 1rem;
+      a {
+        color: #8fa1fe;
+      }
     }
     &.ohm-chart-card {
       .chart-card-header {
