@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit";
 import { JsonRpcProvider, StaticJsonRpcProvider } from "@ethersproject/providers";
-import { error } from "./MessagesSlice";
+import { error, info } from "./MessagesSlice";
 import { setAll } from "../helpers";
 import { EnvHelper } from "../helpers/Environment";
 import { NodeHelper } from "../helpers/NodeHelper";
@@ -19,8 +19,8 @@ export const initializeNetwork = createAsyncThunk(
       let uri: string;
       let supported: boolean = true;
       const id: number = await provider.getNetwork().then(network => network.chainId);
-
-      NodeHelper.setNetworkID(id);
+      // console.log("[tz]: netId_id:", id);
+      // NodeHelper.setNetworkID(id);
       switch (id) {
         case 1:
           networkName = "Ethereum";
@@ -155,6 +155,8 @@ export const switchNetwork = createAsyncThunk(
           console.log(e);
           dispatch(error("Error switching network!"));
         }
+      } else {
+        dispatch(info("Please connect wallet first."));
       }
       // }
     }

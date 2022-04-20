@@ -56,6 +56,7 @@ const Presale = memo(() => {
   const handleSwitchChain = async (id: any) => {
     // return () => {
     await dispatch(switchNetwork({ provider: provider, networkId: id }));
+    dispatch(getBalances({ address, networkID: networkId, provider }));
     // };
   };
 
@@ -154,12 +155,12 @@ const Presale = memo(() => {
 
   const setTazorBalanceCallback = (value: number) => {
     setTazorBalance(value);
-    setTazorETHBalance(value * tazorPPrice);
+    setTazorETHBalance(Number(Number(value * tazorPPrice).toFixed(3)));
   };
 
   const setTazBalanceCallback = (value: number) => {
     setTazBalance(value);
-    setTazETHBalance(value * tazPPrice);
+    setTazETHBalance(Number(Number(value * tazPPrice).toFixed(3)));
   };
 
   const setTazorETHBalanceCallback = (value: number) => {
@@ -192,12 +193,14 @@ const Presale = memo(() => {
     //   // setETHBalanceCallback(currentETHBalance - maxTransactionFee);
     //   return dispatch(info("You have not enough balance."));
     // }
-
     let amount = 0;
     if (action == "tazor") {
       amount = tazorBalance;
     } else {
       amount = tazBalance;
+    }
+    if (amount < 1) {
+      return dispatch(info("Minimum amount is 1 Tazor!"));
     }
     console.log("[tz] => ethBalance: ", tazorEthBalance);
     console.log("[tz] => amount for buy: ", amount);
@@ -232,6 +235,9 @@ const Presale = memo(() => {
     } else {
       amount = tazBalance;
     }
+    if (amount < 10) {
+      return dispatch(info("Minimum amount is 10 Taz!"));
+    }
     console.log("[tz] => ethBalance: ", tazEthBalance);
     console.log("[tz] => amount for buy: ", amount);
     await dispatch(
@@ -244,7 +250,7 @@ const Presale = memo(() => {
         networkID: networkId,
       }),
     );
-    setTazorBalanceCallback(0);
+    setTazBalanceCallback(0);
   };
 
   const onClaim = async (action: string) => {
@@ -336,8 +342,8 @@ const Presale = memo(() => {
           <Paper
             className={`ohm-card`}
             style={{
-              paddingLeft: isSmallScreen || isVerySmallScreen ? "0" : "4rem",
-              paddingRight: isSmallScreen || isVerySmallScreen ? "0" : "4rem",
+              paddingLeft: isSmallScreen || isVerySmallScreen ? "10px" : "4rem",
+              paddingRight: isSmallScreen || isVerySmallScreen ? "10px" : "4rem",
             }}
           >
             <Box className="card-header" paddingBottom={2}>

@@ -28,7 +28,7 @@ export class NodeHelper {
 
   static currentRemovedNodes = JSON.parse(NodeHelper._storage.getItem(NodeHelper._invalidNodesKey) || "{}");
   static currentRemovedNodesURIs = Object.keys(NodeHelper.currentRemovedNodes);
-  static currentNetworkID = -1;
+  static currentNetworkID = 888;
 
   static setNetworkID(networkId: number) {
     NodeHelper.currentNetworkID = networkId;
@@ -130,7 +130,7 @@ export class NodeHelper {
    */
   static getMainnetStaticProvider = () => {
     console.log("currentNetId", NodeHelper.currentNetworkID);
-    return new StaticJsonRpcProvider(NodeHelper.getMainnetURI(NodeHelper.currentNetworkID));
+    return new StaticJsonRpcProvider(NodeHelper.getMainnetURI(1));
   };
 
   /**

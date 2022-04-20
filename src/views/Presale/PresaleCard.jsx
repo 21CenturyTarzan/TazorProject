@@ -38,7 +38,7 @@ export function PresaleCard({
   tazPurchasedBalance,
   setNetSelCallback,
 }) {
-  console.log(currentETHBalance);
+  // console.log(currentETHBalance);
   const [networkId, setNetworkId] = useState(80001);
   const curNetworkId = useAppSelector(state => state.network.networkId);
   useEffect(() => {
@@ -64,41 +64,51 @@ export function PresaleCard({
               </div>
             </FormControl>
           </Grid>
-          <div style={{ padding: "10px", backgroundColor: "lightgreen", margin: "30px", color: "black", fontSize: "15px"}}>
+          <div style={{ padding: "10px", backgroundColor: "white", margin: "30px", color: "black", fontSize: "15px", fontWeight: "200", boxShadow: "4px 4px 20px" }}>
             <Grid alignItems="flex-end" >
               <div>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div align="right">
-                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>
                       Balance: {currentETHBalance} {tokenName}
                     </h3>
                   </div>
-                </FormControl>  
+                </FormControl>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <Grid item xs={12} sm={6} md={6} lg={6} >
+                <Grid item xs={12} sm={4} md={4} lg={4}>
+                  <FormControl variant="outlined" color="primary" fullWidth>
+                    <div>
+                      <h3 style={{ fontWeight: "500", margin: "10px" }}>
+                        Buy Amount:
+                      </h3>
+                    </div>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4}>
                   <FormControl variant="outlined" color="primary" fullWidth>
                     <OutlinedInput
                       type="number"
                       placeholder="0"
                       value={tazorEthBalance ? tazorEthBalance : ""}
-                      style={{ color: "black"}}
+                      style={{ color: "black" }}
                       onChange={e => setTazorETHBalanceCallback(e.target.value)}
                       labelWidth={0}
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={4} md={4} lg={4} >
+                <Grid item xs={12} sm={4} md={4} lg={4}>
                   <FormControl className="ohm-input" variant="outlined">
-                    <InputLabel id="demo-simple-select-label">Currency</InputLabel>
+                    <InputLabel id="demo-simple-select-label" style={{ color: "black" }}>Currency</InputLabel>
                     <Select
+                      className="token-select"
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={networkId}
                       label="NETWORK"
                       onChange={changeNet}
                     >
-                      <MenuItem value={1}>ETH</MenuItem>
+                      <MenuItem value={1} >ETH</MenuItem>
                       <MenuItem value={97}>BNB</MenuItem>
                       <MenuItem value={80001}>MATIC</MenuItem>
                       <MenuItem value={43114}>AVAX</MenuItem>
@@ -118,18 +128,14 @@ export function PresaleCard({
               <Grid item xs={12} sm={6} md={6} lg={6} >
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
-                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                      Minimum Amount: 
-                    </h3>
+                    <h3 style={{ fontWeight: "500", margin: "10px" }}>Minimum Amount: </h3>
                   </div>
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={4} md={4} lg={4} >
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
-                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                      1 Tazor 
-                    </h3>
+                    <h3 style={{fontWeight: "500", margin: "10px" }}>1 Tazor</h3>
                   </div>
                 </FormControl>
               </Grid>
@@ -138,9 +144,7 @@ export function PresaleCard({
               <Grid item xs={12} sm={6} md={6} lg={6} >
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
-                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                      You will receive: 
-                    </h3>
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>You will receive: </h3>
                   </div>
                 </FormControl>
               </Grid>
@@ -161,18 +165,16 @@ export function PresaleCard({
               <Grid item xs={12} sm={6} md={6} lg={6}>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
-                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                      your purchased amount:
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>
+                      Purchased amount:
                     </h3>
                   </div>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4} md={4} lg={4} >
+              <Grid item xs={12} sm={4} md={4} lg={4}>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
-                    <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                      {tazorPurchasedBalance} Tazor
-                    </h3>
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>{tazorPurchasedBalance} Tazor</h3>
                   </div>
                 </FormControl>
               </Grid>
@@ -189,7 +191,7 @@ export function PresaleCard({
             <Grid container>
               <FormControl variant="outlined" color="primary" fullWidth>
                 <div align="center">
-                  <h2>Total Sold : {(Number(tazorPTotalSupply - tazorInCirculation) * 10 ).toFixed(3)} $</h2>
+                  <h2 style={{ margin: "10px", fontWeight: "500", marginTop: "20px" }}>Total Sold : {(Number(tazorPTotalSupply - tazorInCirculation) * 10).toFixed(3)} $</h2>
                 </div>
               </FormControl>
             </Grid>
@@ -198,50 +200,135 @@ export function PresaleCard({
         {/* <Grid item xs={12} sm={1} md={1} lg={1}></Grid> */}
         {/* ===================   DIVIDER     ===============*/}
         <Grid item xs={12} sm={6} md={6} lg={6}>
-          <Grid container>
+          <Grid>
             <FormControl variant="outlined" color="primary" fullWidth>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  <h1><span style={{color: "#edaa45" }}>Taz</span> price $1.00</h1>
+                  <h1><span style={{color: "#edaa45"}}>Taz</span> price $1.00</h1>
                 </div>
               </div>
             </FormControl>
           </Grid>
-          <div style={{ padding: "10px", backgroundColor: "lightgrey", margin: "30px", color: "black" }}>
-            <Grid container alignItems="flex-end">
-              <FormControl variant="outlined" color="primary" fullWidth>
-                <div align="right">
-                  <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                    Balance: {currentETHBalance} {tokenName}
-                  </h3>
-                </div>
-                <OutlinedInput
-                  type="number"
-                  placeholder="0"
-                  value={tazEthBalance ? tazEthBalance : ""}
-                  onChange={e => setTazETHBalanceCallback(e.target.value)}
-                  labelWidth={0}
-                />
-              </FormControl>
+          <div style={{ padding: "10px", backgroundColor: "white", margin: "30px", color: "black", fontSize: "15px", fontWeight: "200", boxShadow: "4px 4px 20px" }}>
+            <Grid alignItems="flex-end" >
+              <div>
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div align="right">
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>
+                      Balance: {currentETHBalance} {tokenName}
+                    </h3>
+                  </div>
+                </FormControl>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <Grid item xs={12} sm={4} md={4} lg={4}>
+                  <FormControl variant="outlined" color="primary" fullWidth>
+                    <div>
+                      <h3 style={{ fontWeight: "500", margin: "10px" }}>
+                        Buy Amount:
+                      </h3>
+                    </div>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4}>
+                  <FormControl variant="outlined" color="primary" fullWidth>
+                    <OutlinedInput
+                      type="number"
+                      placeholder="0"
+                      value={tazEthBalance ? tazEthBalance : ""}
+                      style={{ color: "black" }}
+                      onChange={e => setTazETHBalanceCallback(e.target.value)}
+                      labelWidth={0}
+                    />
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4} lg={4}>
+                  <FormControl className="ohm-input" variant="outlined">
+                    <InputLabel id="demo-simple-select-label" style={{ color: "black" }}>Currency</InputLabel>
+                    <Select
+                      className="token-select"
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={networkId}
+                      label="NETWORK"
+                      onChange={changeNet}
+                    >
+                      <MenuItem value={1} >ETH</MenuItem>
+                      <MenuItem value={97}>BNB</MenuItem>
+                      <MenuItem value={80001}>MATIC</MenuItem>
+                      <MenuItem value={43114}>AVAX</MenuItem>
+                      <MenuItem value={250}>FTM</MenuItem>
+                      <MenuItem value={361}>TFUEL</MenuItem>
+                      <MenuItem value={1666600000}>ONE</MenuItem>
+                      <MenuItem value={40}>TLOS</MenuItem>
+                      <MenuItem value={42220}>CELO</MenuItem>
+                      <MenuItem value={19}>SGB</MenuItem>
+                      <MenuItem value={1285}>MOVR</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </div>
             </Grid>
-            <Grid container alignItems="flex-end" style={{ marginTop: "40px" }}>
-              <FormControl variant="outlined" color="primary" fullWidth>
-                <div>
-                  <h3 style={{ margin: "0px", fontWeight: "700", margin: "10px" }}>
-                    You will receive {tazBalance} TAZ.
-                  </h3>
-                </div>
-                <OutlinedInput
-                  type="number"
-                  id=""
-                  placeholder="0"
-                  value={tazBalance ? tazBalance : ""}
-                  onChange={e => setTazBalanceCallback(e.target.value)}
-                  labelWidth={0}
-                />
-              </FormControl>
+            <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+              <Grid item xs={12} sm={6} md={6} lg={6} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ fontWeight: "500", margin: "10px" }}>
+                      Minimum Amount:
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{fontWeight: "500", margin: "10px" }}>10 Taz</h3>
+                  </div>
+                </FormControl>
+              </Grid>
             </Grid>
-            <Grid container alignItems="flex-end" style={{ marginTop: "30px", display: "flex" }}>
+            <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+              <Grid item xs={12} sm={6} md={6} lg={6} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>
+                      You will receive: 
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4} >
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <OutlinedInput
+                    id=""
+                    placeholder="0"
+                    value={tazBalance ? tazBalance : ""}
+                    style={{ color: "black" }}
+                    onChange={e => setTazBalanceCallback(e.target.value)}
+                    labelWidth={0}
+                  />
+                </FormControl>
+              </Grid>
+            </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>
+                      Purchased amount:
+                    </h3>
+                  </div>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} lg={4}>
+                <FormControl variant="outlined" color="primary" fullWidth>
+                  <div>
+                    <h3 style={{ margin: "10px", fontWeight: "500" }}>{tazPurchasedBalance} Taz</h3>
+                  </div>
+                </FormControl>
+              </Grid>
+            </Grid>
+            <Grid container alignItems="flex-end" style={{ marginTop: "30px" }}>
               <Grid item xs={12} sm={4} md={4} lg={4} />
               <Grid item xs={12} sm={4} md={4} lg={4}>
                 <FormControl variant="outlined" color="primary" style={{ display: "flex" }}>
@@ -253,7 +340,7 @@ export function PresaleCard({
             <Grid container>
               <FormControl variant="outlined" color="primary" fullWidth>
                 <div align="center">
-                  <h2>Sold Taz : {Number(tazPTotalSupply - tazInCirculation).toFixed(3)}</h2>
+                  <h2 style={{ margin: "10px", fontWeight: "500", marginTop: "20px" }}>Total Sold : {(Number(tazPTotalSupply - tazInCirculation)).toFixed(3)} $</h2>
                 </div>
               </FormControl>
             </Grid>

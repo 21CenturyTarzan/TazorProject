@@ -93,3 +93,21 @@
     }
   }
 }
+
+.token-select {
+  .MuiSelect-select {
+    color :black !important;
+  }
+  .MuiSelect-icon {
+    color :black !important;
+  }
+}
+
+// .MuiInputBase-root {
+//   color : black !important;
+// }
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.23) !important;
+}
+
