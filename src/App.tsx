@@ -245,7 +245,7 @@ function App() {
       setWalletChecked(true);
     }
     if (shouldTriggerSafetyCheck()) {
-      dispatch(info("Safety Check: Always verify you're on app.tazor.finance!"));
+      dispatch(info("Safety Check: Always verify you're on tazor.io"));
     }
   }, []);
 

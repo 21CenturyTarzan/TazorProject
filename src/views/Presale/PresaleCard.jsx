@@ -54,7 +54,7 @@ export function PresaleCard({
     // <Paper className="ohm-card">
     <Box display="flex" flexDirection="column">
       <Grid container direction="row">
-        <Grid item xs={12} sm={6} md={6} lg={6} style={{ borderRight: "solid 1px"}}>
+        <Grid item xs={12} sm={6} md={6} lg={6} style={{ borderRight: "solid 1px" }}>
           <Grid>
             <FormControl variant="outlined" color="primary" fullWidth>
               <div style={{ display: "flex", justifyContent: "center" }}>
@@ -65,7 +65,7 @@ export function PresaleCard({
             </FormControl>
           </Grid>
           <div style={{ padding: "10px", backgroundColor: "white", margin: "30px", color: "black", fontSize: "15px", fontWeight: "200", boxShadow: "4px 4px 20px" }}>
-            <Grid alignItems="flex-end" >
+            <Grid alignItems="flex-end">
               <div>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div align="right">
@@ -108,7 +108,7 @@ export function PresaleCard({
                       label="NETWORK"
                       onChange={changeNet}
                     >
-                      <MenuItem value={1} >ETH</MenuItem>
+                      <MenuItem value={1}>ETH</MenuItem>
                       <MenuItem value={97}>BNB</MenuItem>
                       <MenuItem value={80001}>MATIC</MenuItem>
                       <MenuItem value={43114}>AVAX</MenuItem>
@@ -125,14 +125,14 @@ export function PresaleCard({
               </div>
             </Grid>
             <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
-              <Grid item xs={12} sm={6} md={6} lg={6} >
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
                     <h3 style={{ fontWeight: "500", margin: "10px" }}>Minimum Amount: </h3>
                   </div>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4} md={4} lg={4} >
+              <Grid item xs={12} sm={4} md={4} lg={4}>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
                     <h3 style={{fontWeight: "500", margin: "10px" }}>1 Tazor</h3>
@@ -141,14 +141,14 @@ export function PresaleCard({
               </Grid>
             </Grid>
             <Grid container alignItems="flex-end" style={{ marginTop: "20px", display: "flex", justifyContent: "space-between" }}>
-              <Grid item xs={12} sm={6} md={6} lg={6} >
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <div>
                     <h3 style={{ margin: "10px", fontWeight: "500" }}>You will receive: </h3>
                   </div>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4} md={4} lg={4} >
+              <Grid item xs={12} sm={4} md={4} lg={4}>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <OutlinedInput
                     id=""
@@ -297,7 +297,7 @@ export function PresaleCard({
                   </div>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4} md={4} lg={4} >
+              <Grid item xs={12} sm={4} md={4} lg={4}>
                 <FormControl variant="outlined" color="primary" fullWidth>
                   <OutlinedInput
                     id=""
@@ -335,7 +335,7 @@ export function PresaleCard({
                   {address ? modalButton[2] : modalButton[0]}
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4} md={4} lg={4} />
+              <Grid item xs={12} sm={4} md={4} lg={4}/>
             </Grid>
             <Grid container>
               <FormControl variant="outlined" color="primary" fullWidth>

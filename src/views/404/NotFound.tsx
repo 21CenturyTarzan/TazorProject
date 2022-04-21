@@ -11,7 +11,7 @@ export default function NotFound() {
         </a>
 
         <h4>
-          <Trans>Page not found</Trans>
+          <Trans>Please connect your wallet</Trans>
         </h4>
       </div>
     </div>

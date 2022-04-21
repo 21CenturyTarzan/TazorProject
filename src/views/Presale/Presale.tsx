@@ -20,6 +20,8 @@ import { getBalances } from "../../slices/AccountSlice";
 import { MetricCollection } from "src/components/Metric";
 import { ReactComponent as TazorTokenImg } from "../../assets/tokens/token_TAZOR.svg";
 import { switchNetwork } from "../../slices/NetworkSlice";
+import TazorImg from "../../assets/icons/tazor_icon.png";
+import TazImg from "../../assets/icons/taz_icon.png";
 
 type InputEvent = ChangeEvent<HTMLInputElement>;
 
@@ -404,7 +406,7 @@ const Presale = memo(() => {
               <Grid container alignItems="flex-end" style={{ marginTop: "30px", alignItems: "normal" }}>
                 <Grid item xs={12} sm={12} md={6} lg={6} style={{ paddingRight: "20px" }}>
                   <div className="row" style={{ paddingRight: "10px" }}>
-                    <img src="../../tazor_icon.png" style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
+                    <img src={TazorImg} style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
                     <Typography style={{padding:"1px"}}>
                       <h3 style={{ fontSize: "20px"}}> <span style={{color: "#7a66f8"}}>Tazor</span> token is used for earning APR</h3>
                       <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>
@@ -418,7 +420,7 @@ const Presale = memo(() => {
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={6}>
                   <div className="row" style={{ paddingRight: "10px" }}>
-                    <img src="../../taz_icon.png" style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
+                    <img src={TazImg} style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
                     <Typography style={{ padding: "1px" }}>
                     <h3 style={{ fontSize: "20px"}}> <span style={{color: "#edaa45" }}>Taz</span> token is used to increase your APR</h3>
                       <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>

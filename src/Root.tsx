@@ -36,7 +36,7 @@ const Root: FC = () => {
     <Web3ContextProvider>
       <Provider store={store}>
         <I18nProvider i18n={i18n}>
-          <BrowserRouter basename={"/#"}>{isApp() ? <App /> : <Landing />}</BrowserRouter>
+          <BrowserRouter basename={"/app/#"}>{isApp() ? <App /> : <Landing />}</BrowserRouter>
         </I18nProvider>
       </Provider>
     </Web3ContextProvider>

@@ -130,7 +130,7 @@ export const mai = new StableBond({
   name: "mai",
   displayName: "MAI",
   bondToken: "MAI",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: apeImg,
@@ -835,7 +835,7 @@ export const aave = new StableBond({
   name: "aave",
   displayName: "AAVE",
   bondToken: "AAVE",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: aaveImg,
@@ -1011,7 +1011,7 @@ export const sushi = new StableBond({
   name: "sushi",
   displayName: "SUSHI",
   bondToken: "SUSHI",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: sushiImg,
@@ -1026,7 +1026,7 @@ export const sushi = new StableBond({
     [NetworkID.Polygon]: crvImg,
     [NetworkID.Theta]: voltImg,
     [NetworkID.Songbird]: LusdImg,
-    [NetworkID.Harmony]: LusdImg,
+    [NetworkID.Harmony]: sushiImg,
     [NetworkID.Telos]: sushiImg,
     [NetworkID.Metis]: LusdImg,
     [NetworkID.Celo]: sushiImg,
@@ -1183,7 +1183,7 @@ export const lusd = new StableBond({
   name: "lusd",
   displayName: "LUSD",
   bondToken: "LUSD",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: compImg,
@@ -1359,7 +1359,7 @@ export const uni = new StableBond({
   name: "uni",
   displayName: "UNI",
   bondToken: "UNI",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: uniImg,
@@ -1683,7 +1683,7 @@ export const shib = new StableBond({
   name: "shib",
   displayName: "SHIB",
   bondToken: "SHIB",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: shibImg,
@@ -1843,7 +1843,7 @@ export const eleven = new StableBond({
   name: "eleven",
   displayName: "ELEVEN",
   bondToken: "ELEVEN",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: croImg,
@@ -2005,7 +2005,7 @@ export const eth = new CustomBond({
   lpUrl: "",
   bondType: BondType.StableAsset,
   bondToken: "wETH",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: true,
   bondIconSvg: {
     [NetworkID.Mainnet]: wETHImg,
@@ -2185,7 +2185,7 @@ export const cvx = new CustomBond({
   lpUrl: "",
   bondType: BondType.StableAsset,
   bondToken: "CVX",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: CvxImg,
@@ -2535,7 +2535,7 @@ export const tazor_dai = new LPBond({
 //   name: "ohm_dai_lp_old",
 //   displayName: "OHM-DAI LP OLD",
 //   bondToken: "DAI",
-//   payoutToken: "OHM",
+//   payoutToken: "TAZOR",
 //   v2Bond: true,
 //   bondIconSvg: {
 //     [NetworkID.Mainnet]: OhmDaiImg,
@@ -2788,7 +2788,7 @@ export const ohm_lusd = new LPBond({
   name: "ohm_lusd_lp",
   displayName: "OHM-LUSD LP",
   bondToken: "LUSD",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: false,
   bondIconSvg: {
     [NetworkID.Mainnet]: OhmLusdImg,
@@ -2946,7 +2946,7 @@ export const ohm_weth = new CustomBond({
   name: "ohm_weth_lp",
   displayName: "OHM-WETH SLP",
   bondToken: "WETH",
-  payoutToken: "OHM",
+  payoutToken: "TAZOR",
   v2Bond: true,
   bondIconSvg: {
     [NetworkID.Mainnet]: OhmEthImg,
@@ -3133,7 +3133,7 @@ export const ohm_weth = new CustomBond({
 //   name: "ohm_weth_lp_old",
 //   displayName: "OHM-WETH SLP OLD",
 //   bondToken: "WETH",
-//   payoutToken: "OHM",
+//   payoutToken: "TAZOR",
 //   v2Bond: false,
 //   bondIconSvg: {
 //     [NetworkID.Mainnet]: OhmEthImg,

@@ -1,12 +1,13 @@
 import { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Social from "./Social";
+// import Social from "./Social";
 import externalUrls from "./externalUrls";
 import { ReactComponent as StakeIcon } from "../../assets/icons/stake.svg";
 import { ReactComponent as BondIcon } from "../../assets/icons/bond.svg";
 import { ReactComponent as DashboardIcon } from "../../assets/icons/dashboard.svg";
 import { ReactComponent as OlympusIcon } from "../../assets/icons/TAZOR_logo.svg";
 import { ReactComponent as WrapIcon } from "../../assets/icons/wrap.svg";
+// import { ReactComponent as YtIcon } from "../../assets/icons/youtube.svg";
 import { Trans } from "@lingui/macro";
 import { trim, shorten } from "../../helpers";
 import { useAddress } from "src/hooks/web3Context";
@@ -58,12 +59,12 @@ function NavContent() {
       <Box className="dapp-sidebar-inner" display="flex" justifyContent="space-between" flexDirection="column">
         <div className="dapp-menu-top">
           <Box className="branding-header">
-            <Link href="https://tazordao.finance" target="_blank">
+            <Link href="https://tazor.io" target="_blank">
               <SvgIcon
                 color="primary"
                 component={OlympusIcon}
-                viewBox="0 0 200 60"
-                style={{ minWdth: "100px", minHeight: "60px", width: "250px" }}
+                viewBox="0 0 150 60"
+                style={{ minWdth: "120px", minHeight: "90px", width: "150px" }}
               />
             </Link>
           </Box>
@@ -98,10 +99,9 @@ function NavContent() {
                   >
                     <Typography variant="h6">
                       <SvgIcon color="primary" component={DashboardIcon} />
-                      <Trans>Dashboard</Trans>
+                      <Trans>Liquidity</Trans>
                     </Typography>
                   </Link>
-
                   <Link
                     component={NavLink}
                     id="dash-nav"
@@ -113,7 +113,7 @@ function NavContent() {
                   >
                     <Typography variant="h6">
                       <SvgIcon color="primary" component={WrapIcon} />
-                      <Trans>Presale</Trans>
+                      <Trans>Pre-Sale</Trans>
                     </Typography>
                   </Link>
 
@@ -128,40 +128,13 @@ function NavContent() {
                   >
                     <Typography variant="h6">
                       <SvgIcon color="primary" component={BondIcon} />
-                      <Trans>Bond</Trans>
+                      <Trans>Buy Tazor</Trans>
                     </Typography>
                   </Link>
-                  <div className="dapp-menu-data discounts">
-                    <div className="bond-discounts">
-                      {bonds.map((bond, i) => {
-                        if (bond.getBondability(networkId) || bond.getLOLability(networkId)) {
-                          return (
-                            <Link component={NavLink} to={`/bonds/${bond.name}`} key={i} className={"bond"}>
-                              {!bond.bondDiscount ? (
-                                <Skeleton variant="text" width={"150px"} />
-                              ) : (
-                                <Typography variant="body2">
-                                  {bond.displayName}
-
-                                  <span className="bond-pair-roi">
-                                    {bond.isLOLable[networkId]
-                                      ? "--"
-                                      : !bond.isBondable[networkId]
-                                      ? "Sold Out"
-                                      : `${bond.bondDiscount && trim(bond.bondDiscount * 100, 2)}%`}
-                                  </span>
-                                </Typography>
-                              )}
-                            </Link>
-                          );
-                        }
-                      })}
-                    </div>
-                  </div>
                   <Link
                     component={NavLink}
                     id="stake-nav"
-                    to="/"
+                    to="/stake"
                     isActive={(match, location) => {
                       return checkPage(match, location, "stake");
                     }}
@@ -169,7 +142,7 @@ function NavContent() {
                   >
                     <Typography variant="h6">
                       <SvgIcon color="primary" component={StakeIcon} />
-                      <Trans>Earn</Trans>
+                      <Trans>Stake/Earn</Trans>
                     </Typography>
                   </Link>
 
@@ -200,9 +173,6 @@ function NavContent() {
                       <SvgIcon style={{ marginLeft: "5px" }} component={ArrowUpIcon} />
                     </Typography>
                   </Link> */}
-                  <Box className="menu-divider">
-                    <Divider />
-                  </Box>
                   {/* <Link
                     component={NavLink}
                     id="zap-nav"
@@ -264,9 +234,6 @@ function NavContent() {
                 </Link>
               );
             })}
-          </div>
-          <div className="dapp-menu-social">
-            <Social />
           </div>
         </Box>
       </Box>

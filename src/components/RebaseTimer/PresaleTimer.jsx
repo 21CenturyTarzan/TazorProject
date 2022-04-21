@@ -53,7 +53,7 @@ function PresaleTimer() {
         {presaleLeftTime ? (
           presaleLeftTime > 0 ? (
             <>
-              <strong style={{color: "#edef8e" }}>( {rebaseString}&nbsp;) </strong>
+              <strong style={{ color: "#edef8e" }}>( {rebaseString}&nbsp;) </strong>
             </>
           ) : (
             <strong>Finished</strong>
