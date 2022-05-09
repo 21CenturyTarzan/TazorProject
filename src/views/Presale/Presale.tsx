@@ -409,7 +409,7 @@ const Presale = memo(() => {
                     <img src={TazorImg} style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
                     <Typography style={{padding:"1px"}}>
                       <h3 style={{ fontSize: "20px"}}> <span style={{color: "#7a66f8"}}>Tazor</span> token is used for earning APR</h3>
-                      <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>
+                      <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200, lineHeight: "1.2" }}>
                       TAZOR token has no limit to its supply, however the TAZOR token is only minted whenever a Bond is
                       purchased, so all TAZOR is backed by the Treasury</h2>
                       <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>
@@ -423,7 +423,7 @@ const Presale = memo(() => {
                     <img src={TazImg} style={{width:"50px", height:"50px", float: "left", marginRight: "1rem", marginBottom: "1rem"}}/>
                     <Typography style={{ padding: "1px" }}>
                     <h3 style={{ fontSize: "20px"}}> <span style={{color: "#edaa45" }}>Taz</span> token is used to increase your APR</h3>
-                      <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200 }}>
+                      <h2 style={{ textAlign: "justify", fontSize: "15px", fontWeight: 200, lineHeight: "1.2" }}>
                       TAZ token has no limit to its supply, however the TAZ token is only minted whenever rewards are given to users who have 
                       Staked TAZOR. A small percentage of Staked TAZ tokens are Burned from a specific user’s Staked TAZ Amount whenever 
                       that user Stakes or Unstakes TAZOR, Stakes or Unstakes TAZ, or Claims TAZ Rewards. This results in users needing to top up 

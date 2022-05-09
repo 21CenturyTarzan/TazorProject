@@ -180,13 +180,13 @@ export function PresaleCard({
               </Grid>
             </Grid>
             <Grid container alignItems="flex-end" style={{ marginTop: "30px" }}>
-              <Grid item xs={12} sm={4} md={4} lg={4} />
-              <Grid item xs={12} sm={4} md={4} lg={4}>
+              <Grid item xs={12} sm={3} md={3} lg={3}/>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <FormControl variant="outlined" color="primary" style={{ display: "flex" }}>
                   {address ? modalButton[1] : modalButton[0]}
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4} md={4} lg={4} />
+              <Grid item xs={12} sm={3} md={3} lg={3} />
             </Grid>
             <Grid container>
               <FormControl variant="outlined" color="primary" fullWidth>
@@ -329,13 +329,13 @@ export function PresaleCard({
               </Grid>
             </Grid>
             <Grid container alignItems="flex-end" style={{ marginTop: "30px" }}>
-              <Grid item xs={12} sm={4} md={4} lg={4} />
-              <Grid item xs={12} sm={4} md={4} lg={4}>
+              <Grid item xs={12} sm={3} md={3} lg={3} />
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <FormControl variant="outlined" color="primary" style={{ display: "flex" }}>
                   {address ? modalButton[2] : modalButton[0]}
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4} md={4} lg={4}/>
+              <Grid item xs={12} sm={3} md={3} lg={3}/>
             </Grid>
             <Grid container>
               <FormControl variant="outlined" color="primary" fullWidth>
